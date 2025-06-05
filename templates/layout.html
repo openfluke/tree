@@ -1,0 +1,228 @@
+{{ define "layout" }}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{{ .Title }}</title>
+    <link rel="stylesheet" href="/static/css/bulma.min.css" />
+    <link rel="stylesheet" href="/static/css/custom.css" />
+    <link rel="stylesheet" href="/static/css/all.min.css" />
+    <link rel="icon" type="image/x-icon" href="/static/images/favico.ico" />
+
+    <style>
+      .hero-gradient {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-gradient::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="%23ffffff08" points="0,1000 1000,0 1000,1000"/></svg>');
+        z-index: 1;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .floating-animation {
+        animation: float 6s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-20px);
+        }
+      }
+
+      .pulse-animation {
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(103, 126, 234, 0.7);
+        }
+        70% {
+          box-shadow: 0 0 0 10px rgba(103, 126, 234, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(103, 126, 234, 0);
+        }
+      }
+
+      .tech-card {
+        transition: all 0.3s ease;
+        border: 1px solid #e8e8e8;
+        background: linear-gradient(145deg, #ffffff, #f0f0f0);
+      }
+
+      .tech-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        border-color: #667eea;
+      }
+
+      .metric-number {
+        font-size: 3rem;
+        font-weight: 800;
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .architecture-flow {
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        border-radius: 15px;
+        padding: 2rem;
+        margin: 2rem 0;
+      }
+
+      .step-indicator {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        font-size: 1.5rem;
+        margin: 0 auto 1rem auto;
+      }
+
+      .demo-button {
+        background: linear-gradient(45deg, #667eea, #764ba2);
+        border: none;
+        transition: all 0.3s ease;
+      }
+
+      .demo-button:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 30px rgba(103, 126, 234, 0.4);
+      }
+
+      .code-snippet {
+        background: #2d3748;
+        color: #e2e8f0;
+        padding: 1.5rem;
+        border-radius: 10px;
+        font-family: "Courier New", monospace;
+        overflow-x: auto;
+      }
+
+      .highlight-stat {
+        color: #667eea;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body class="has-background-black-ter">
+    <!-- NAVIGATION BAR -->
+    <nav
+      class="navbar is-dark"
+      role="navigation"
+      aria-label="main navigation"
+      style="position: fixed; top: 0; left: 0; width: 100%; z-index: 1000"
+    >
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="/">
+            <img
+              src="/static/images/openflukelogo_notxt.png"
+              alt="Openfluke Logo"
+              style="max-height: 40px"
+            />openfluke
+          </a>
+          <a role="button" class="navbar-burger" id="navbarBurger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
+        </div>
+        <div id="navbarMenu" class="navbar-menu">
+          <div class="navbar-start">
+            <a class="navbar-item" href="/">Home</a>
+            <a class="navbar-item" href="/demo">Demo</a>
+            <a class="navbar-item" href="/paragon">Paragon</a>
+            <a class="navbar-item" href="/bench">Benchmark</a>
+            <a class="navbar-item" href="/about">About</a>
+          </div>
+          <div class="navbar-end">
+            <!--
+        <div class="navbar-item">
+          <span id="userStatus"></span>
+        </div>
+        <div class="navbar-item">
+          <a class="button is-primary" href="/login" id="loginBtn">Log In</a>
+         
+          <a class="button is-info" href="/user" id="userAccountBtn" style="display: none;">My Account</a>
+          <button class="button is-warning" id="logoutBtn" style="display: none;">Log Out</button>
+         
+        </div>
+         -->
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- MAIN CONTENT AREA -->
+    {{ .Content }}
+    <!-- FOOTER -->
+    <!-- Footer -->
+    <footer class="footer has-background-black">
+      <div class="container">
+        <div class="content has-text-centered has-text-light">
+          <div class="buttons is-centered mt-4">
+            <a
+              href="https://github.com/openfluke"
+              target="_blank"
+              class="button is-dark"
+            >
+              <span class="icon"><i class="fab fa-github"></i></span>
+              <span>GitHub</span>
+            </a>
+            <a href="/docs" class="button is-dark">
+              <span class="icon"><i class="fas fa-book"></i></span>
+              <span>Documentation</span>
+            </a>
+            <a href="/contact" class="button is-dark">
+              <span class="icon"><i class="fas fa-envelope"></i></span>
+              <span>Contact</span>
+            </a>
+          </div>
+          <p class="is-size-7 has-text-grey-light mt-4">
+            © 2024 OpenFluke. Licensed under Apache 2.0. Built with ❤️ for the
+            AI community.
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const navbarBurger = document.getElementById("navbarBurger");
+        const navbarMenu = document.getElementById("navbarMenu");
+        navbarBurger.addEventListener("click", () => {
+          navbarBurger.classList.toggle("is-active");
+          navbarMenu.classList.toggle("is-active");
+        });
+      });
+    </script>
+  </body>
+</html>
+{{ end }}

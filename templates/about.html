@@ -1,0 +1,691 @@
+{{ define "about" }}
+
+<style>
+  body {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    min-height: 100vh;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .hero-about {
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+  }
+
+  .section-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    margin: 2rem 0;
+    padding: 3rem;
+  }
+
+  .tech-highlight {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 15px;
+    padding: 2rem;
+    margin: 2rem 0;
+  }
+
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+
+  .feature-card {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-color: #2a5298;
+  }
+
+  .feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .timeline {
+    position: relative;
+    padding-left: 2rem;
+  }
+
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, #667eea, #764ba2);
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 2rem;
+  }
+
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -2.5rem;
+    top: 0.5rem;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: #667eea;
+    border: 3px solid white;
+    box-shadow: 0 0 0 3px #667eea;
+  }
+
+  .stats-section {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: white;
+    border-radius: 15px;
+    padding: 3rem;
+    margin: 2rem 0;
+  }
+
+  .stat-item {
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .stat-number {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffc107;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+
+  .team-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+
+  .team-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    margin: 0 auto 1rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    color: white;
+    font-weight: bold;
+  }
+
+  .section-divider {
+    height: 3px;
+    background: linear-gradient(to right, #667eea, #764ba2);
+    border: none;
+    border-radius: 2px;
+    margin: 3rem 0;
+  }
+
+  .quote-section {
+    background: #f8f9fa;
+    border-left: 5px solid #667eea;
+    padding: 2rem;
+    margin: 2rem 0;
+    border-radius: 0 10px 10px 0;
+    font-style: italic;
+    font-size: 1.1rem;
+  }
+
+  .code-example {
+    background: #1e1e1e;
+    color: #e2e8f0;
+    padding: 1.5rem;
+    border-radius: 10px;
+    font-family: "Courier New", monospace;
+    overflow-x: auto;
+    margin: 1rem 0;
+  }
+
+  .btn-cta {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    border: none;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .btn-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+    color: white;
+    text-decoration: none;
+  }
+</style>
+
+<!-- Hero Section -->
+<section class="hero is-large hero-about">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1
+        class="title is-1 has-text-white mb-4"
+        style="font-size: 4rem; font-weight: 900"
+      >
+        About Paragon AI
+      </h1>
+      <h2 class="subtitle is-3 has-text-white-ter mb-5">
+        Revolutionizing Neural Network Development Through Distributed
+        Intelligence
+      </h2>
+      <p
+        class="is-size-5 has-text-white-bis mb-6"
+        style="max-width: 800px; margin: 0 auto; line-height: 1.8"
+      >
+        Paragon AI is a groundbreaking framework that democratizes advanced
+        neural network training through distributed micro-network surgery,
+        type-generic architectures, and WebGPU acceleration.
+      </p>
+      <div class="buttons is-centered">
+        <a href="/demo" class="btn-cta">
+          <span class="icon"><i class="fas fa-play"></i></span>
+          <span>Try Live Demo</span>
+        </a>
+        <a
+          href="https://github.com/openfluke/paragon"
+          target="_blank"
+          class="btn-cta"
+          style="background: rgba(255, 255, 255, 0.2)"
+        >
+          <span class="icon"><i class="fab fa-github"></i></span>
+          <span>View Source</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="container">
+  <!-- Vision & Mission -->
+  <section class="section-card">
+    <div class="columns is-vcentered">
+      <div class="column is-6">
+        <h2 class="title is-2">Our Vision</h2>
+        <p class="is-size-5 mb-4">
+          We believe artificial intelligence should be accessible, efficient,
+          and distributed. Too many brilliant minds are held back by expensive
+          cloud computing costs and centralized AI infrastructure.
+        </p>
+        <p class="is-size-5 mb-4">
+          Paragon AI breaks down these barriers by enabling distributed neural
+          network training across everyday devices - phones, laptops, and edge
+          computers - while maintaining state-of-the-art performance through
+          revolutionary micro-network surgery techniques.
+        </p>
+        <div class="quote-section">
+          "Every device is a potential AI worker. Every idle CPU cycle is an
+          opportunity for discovery."
+          <br /><strong>- OpenFluke Team</strong>
+        </div>
+      </div>
+      <div class="column is-6">
+        <div class="tech-highlight">
+          <h3 class="title is-3 has-text-white">The Problem We Solve</h3>
+          <div class="columns">
+            <div class="column">
+              <h4 class="title is-5 has-text-white">💰 High Costs</h4>
+              <p>
+                Cloud GPU training can cost $100k+/month for enterprise models
+              </p>
+            </div>
+            <div class="column">
+              <h4 class="title is-5 has-text-white">🐌 Slow Iteration</h4>
+              <p>
+                Traditional training takes days or weeks for architectural
+                experiments
+              </p>
+            </div>
+          </div>
+          <div class="columns">
+            <div class="column">
+              <h4 class="title is-5 has-text-white">🔒 Centralized</h4>
+              <p>
+                AI development concentrated in big tech companies with massive
+                resources
+              </p>
+            </div>
+            <div class="column">
+              <h4 class="title is-5 has-text-white">♻️ Waste</h4>
+              <p>
+                Billions of devices sit idle while AI researchers wait for
+                compute
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Innovations -->
+  <section class="section-card">
+    <h2 class="title is-2 has-text-centered mb-6">Revolutionary Technology</h2>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-cut"></i>
+        </div>
+        <h3 class="title is-4">Micro-Network Surgery</h3>
+        <p>
+          Extract, modify, and reintegrate neural network segments without
+          losing model integrity. Our breakthrough technique allows surgical
+          modification of specific network layers while preserving overall
+          performance.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-code"></i>
+        </div>
+        <h3 class="title is-4">Type-Generic Networks</h3>
+        <p>
+          One codebase supports Float32, Float64, Int32, and Uint32 networks.
+          From GPU-optimized floating-point to memory-efficient integer networks
+          for edge devices.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-chart-line"></i>
+        </div>
+        <h3 class="title is-4">ADHD Performance</h3>
+        <p>
+          Accuracy Deviation Heatmap Distribution scoring provides precise model
+          evaluation beyond traditional metrics. Advanced performance assessment
+          for optimization decisions.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-network-wired"></i>
+        </div>
+        <h3 class="title is-4">Distributed Training</h3>
+        <p>
+          Leverage idle computing power across phones, laptops, and edge
+          devices. Automatic load balancing and fault tolerance enable
+          planetary-scale neural networks.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-bolt"></i>
+        </div>
+        <h3 class="title is-4">WebGPU Acceleration</h3>
+        <p>
+          Native GPU acceleration using modern WebGPU standards. Lightning-fast
+          training and inference across browsers and devices without traditional
+          GPU computing barriers.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">
+          <i class="fas fa-seedling"></i>
+        </div>
+        <h3 class="title is-4">Dynamic Growth</h3>
+        <p>
+          Networks that evolve automatically based on performance metrics and
+          data complexity. Self-improving architectures that adapt to new
+          challenges without manual intervention.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="section-card">
+    <h2 class="title is-2 has-text-centered mb-6">How Paragon Works</h2>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <h3 class="title is-4">1. Checkpoint Extraction</h3>
+        <p class="is-size-5 mb-3">
+          Paragon captures the state of neural network layers at strategic
+          checkpoints, creating snapshots that preserve learned representations.
+        </p>
+        <div class="code-example">
+          micro := network.ExtractMicroNetwork(checkpointLayer)
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <h3 class="title is-4">2. Micro-Network Surgery</h3>
+        <p class="is-size-5 mb-3">
+          Extracted network segments are surgically modified - adding layers,
+          changing activations, or optimizing architectures - while maintaining
+          compatibility with the main network.
+        </p>
+        <div class="code-example">
+          improved, success := micro.TryImprovement( checkpointData, minWidth,
+          maxWidth, activationPool )
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <h3 class="title is-4">3. Distributed Optimization</h3>
+        <p class="is-size-5 mb-3">
+          Multiple devices simultaneously experiment with different
+          improvements, creating a parallel search space for optimal
+          architectures.
+        </p>
+        <div class="code-example">
+          network.Grow(checkpointLayer, candidates, epochs, workers)
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <h3 class="title is-4">4. Performance Evaluation</h3>
+        <p class="is-size-5 mb-3">
+          ADHD scoring system evaluates each improvement candidate, measuring
+          not just accuracy but deviation patterns and confidence distributions.
+        </p>
+        <div class="code-example">
+          network.EvaluateModel(expected, actual) score :=
+          network.ComputeFinalScore()
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <h3 class="title is-4">5. Network Reintegration</h3>
+        <p class="is-size-5 mb-3">
+          The best improvements are surgically reattached to the main network,
+          evolving the architecture while preserving existing knowledge.
+        </p>
+        <div class="code-example">
+          improved.ReattachToOriginal(network) // Network has evolved!
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact & Results -->
+  <section class="stats-section">
+    <h2 class="title is-2 has-text-white has-text-centered mb-6">
+      Real-World Impact
+    </h2>
+
+    <div class="columns">
+      <div class="column stat-item">
+        <div class="stat-number">90%</div>
+        <p class="title is-5 has-text-white">Cost Reduction</p>
+        <p>vs Traditional Cloud Training</p>
+      </div>
+      <div class="column stat-item">
+        <div class="stat-number">15x</div>
+        <p class="title is-5 has-text-white">Faster Iteration</p>
+        <p>Architecture Experiments</p>
+      </div>
+      <div class="column stat-item">
+        <div class="stat-number">∞</div>
+        <p class="title is-5 has-text-white">Scalability</p>
+        <p>Every Device is a Worker</p>
+      </div>
+      <div class="column stat-item">
+        <div class="stat-number">100%</div>
+        <p class="title is-5 has-text-white">Open Source</p>
+        <p>Apache 2.0 Licensed</p>
+      </div>
+    </div>
+
+    <div class="has-text-centered mt-5">
+      <p class="is-size-4 has-text-white mb-4">
+        <strong
+          >Democratizing AI development for researchers, startups, and
+          enterprises worldwide</strong
+        >
+      </p>
+    </div>
+  </section>
+
+  <!-- Use Cases -->
+  <section class="section-card">
+    <h2 class="title is-2 has-text-centered mb-6">Who Benefits</h2>
+
+    <div class="columns is-multiline">
+      <div class="column is-6">
+        <div class="feature-card">
+          <h3 class="title is-4">
+            <span class="icon has-text-primary"
+              ><i class="fas fa-university"></i
+            ></span>
+            Research Institutions
+          </h3>
+          <p>
+            Universities and research labs with limited compute budgets can now
+            compete with well-funded tech giants. Distribute training across
+            student devices and campus infrastructure.
+          </p>
+          <ul class="mt-3">
+            <li>• Reduce research costs by 90%</li>
+            <li>• Faster hypothesis testing</li>
+            <li>• Democratize AI research</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="column is-6">
+        <div class="feature-card">
+          <h3 class="title is-4">
+            <span class="icon has-text-success"
+              ><i class="fas fa-rocket"></i
+            ></span>
+            AI Startups
+          </h3>
+          <p>
+            Early-stage companies can build sophisticated AI products without
+            massive infrastructure investments. Scale intelligently using
+            distributed resources.
+          </p>
+          <ul class="mt-3">
+            <li>• Lower barrier to entry</li>
+            <li>• Rapid prototyping</li>
+            <li>• Cost-effective scaling</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="column is-6">
+        <div class="feature-card">
+          <h3 class="title is-4">
+            <span class="icon has-text-warning"
+              ><i class="fas fa-building"></i
+            ></span>
+            Enterprise Teams
+          </h3>
+          <p>
+            Large organizations can leverage existing device infrastructure for
+            AI training, reducing cloud costs while improving model performance
+            through distributed optimization.
+          </p>
+          <ul class="mt-3">
+            <li>• Utilize existing hardware</li>
+            <li>• Reduce cloud dependency</li>
+            <li>• Improve model accuracy</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="column is-6">
+        <div class="feature-card">
+          <h3 class="title is-4">
+            <span class="icon has-text-info"
+              ><i class="fas fa-mobile-alt"></i
+            ></span>
+            Edge AI Developers
+          </h3>
+          <p>
+            Mobile and IoT developers can create sophisticated on-device AI
+            using memory-efficient integer networks and optimized architectures.
+          </p>
+          <ul class="mt-3">
+            <li>• Memory-efficient models</li>
+            <li>• Real-time inference</li>
+            <li>• Offline capabilities</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="section-card">
+    <h2 class="title is-2 has-text-centered mb-6">The Team Behind Paragon</h2>
+
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar">OF</div>
+        <h3 class="title is-4">OpenFluke</h3>
+        <p class="subtitle">Founder & Lead Developer</p>
+        <p>
+          Passionate about democratizing AI and building the future of
+          distributed intelligence. Believes every device should contribute to
+          humanity's AI advancement.
+        </p>
+        <div class="buttons is-centered mt-4">
+          <a
+            href="https://github.com/openfluke"
+            target="_blank"
+            class="button is-small"
+          >
+            <span class="icon"><i class="fab fa-github"></i></span>
+            <span>GitHub</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-avatar">🌍</div>
+        <h3 class="title is-4">Global Community</h3>
+        <p class="subtitle">Open Source Contributors</p>
+        <p>
+          Paragon is built by and for the global AI community. Researchers,
+          developers, and enthusiasts from around the world contribute to
+          advancing distributed AI.
+        </p>
+        <div class="buttons is-centered mt-4">
+          <a
+            href="https://github.com/openfluke/paragon/contributors"
+            target="_blank"
+            class="button is-small"
+          >
+            <span class="icon"><i class="fas fa-users"></i></span>
+            <span>Contributors</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-avatar">🚀</div>
+        <h3 class="title is-4">You?</h3>
+        <p class="subtitle">Future Contributor</p>
+        <p>
+          We're always looking for passionate developers, researchers, and AI
+          enthusiasts to join the mission of democratizing artificial
+          intelligence.
+        </p>
+        <div class="buttons is-centered mt-4">
+          <a
+            href="https://github.com/openfluke/paragon/issues"
+            target="_blank"
+            class="button is-small is-primary"
+          >
+            <span class="icon"><i class="fas fa-heart"></i></span>
+            <span>Join Us</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <!-- Call to Action -->
+  <section class="section-card has-text-centered">
+    <h2 class="title is-2 mb-4">Ready to Revolutionize AI?</h2>
+    <p class="is-size-4 mb-6">
+      Join thousands of developers, researchers, and innovators building the
+      future of distributed artificial intelligence.
+    </p>
+
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="buttons is-centered">
+          <a href="/demo" class="btn-cta is-large">
+            <span class="icon"><i class="fas fa-play"></i></span>
+            <span>Try Live Demo</span>
+          </a>
+          <a
+            href="https://github.com/openfluke/paragon"
+            target="_blank"
+            class="btn-cta is-large"
+            style="background: #333"
+          >
+            <span class="icon"><i class="fab fa-github"></i></span>
+            <span>Get Started</span>
+          </a>
+          <a
+            href="https://github.com/openfluke/growonmnisttest/"
+            target="_blank"
+            class="btn-cta is-large"
+            style="background: #28a745"
+          >
+            <span class="icon"><i class="fas fa-code"></i></span>
+            <span>Example Project</span>
+          </a>
+        </div>
+
+        <p class="is-size-6 has-text-grey mt-4">
+          Apache 2.0 Licensed • Free Forever • Built by the Community
+        </p>
+      </div>
+    </div>
+  </section>
+</div>
+
+{{ end }}

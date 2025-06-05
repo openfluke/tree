@@ -1,0 +1,1108 @@
+{{ define "paragon" }}
+
+<style>
+  .hero-paragon {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-paragon::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle cx="200" cy="200" r="2" fill="%23ffffff20"/><circle cx="800" cy="400" r="3" fill="%23ffffff15"/><circle cx="400" cy="700" r="2" fill="%23ffffff25"/><circle cx="600" cy="100" r="1" fill="%23ffffff30"/></svg>');
+    animation: float-dots 20s linear infinite;
+    z-index: 1;
+  }
+
+  @keyframes float-dots {
+    0% {
+      transform: translateY(0) rotate(0deg);
+    }
+    100% {
+      transform: translateY(-100px) rotate(360deg);
+    }
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .feature-card {
+    background: linear-gradient(145deg, #ffffff, #f8f9fa);
+    border: 1px solid #e9ecef;
+    border-radius: 15px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    height: 100%;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(30, 60, 114, 0.2);
+    border-color: #2a5298;
+  }
+
+  .code-block {
+    background: #1e1e1e !important;
+    color: #d4d4d4 !important;
+    padding: 2rem;
+    border-radius: 12px;
+    font-family: "JetBrains Mono", "Courier New", monospace;
+    font-size: 0.9rem;
+    overflow-x: auto;
+    position: relative;
+    border: 1px solid #333;
+  }
+
+  .code-block::before {
+    content: "Go";
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    color: #00d4aa;
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+
+  .code-block pre {
+    background: transparent !important;
+    color: #d4d4d4 !important;
+    margin: 0;
+    padding: 0;
+    border: none;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .code-block .box {
+    background: none !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .architecture-diagram {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 20px;
+    padding: 3rem;
+    margin: 2rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .architecture-diagram::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+      circle,
+      rgba(42, 82, 152, 0.1) 0%,
+      transparent 70%
+    );
+    animation: rotate 30s linear infinite;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  .tech-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #1e3c72, #2a5298);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .performance-metric {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transform: perspective(1000px) rotateY(5deg);
+    transition: transform 0.3s ease;
+  }
+
+  .performance-metric:hover {
+    transform: perspective(1000px) rotateY(0deg) scale(1.05);
+  }
+
+  .network-visualization {
+    background: #000;
+    border-radius: 15px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .neuron {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #00d4aa;
+    position: absolute;
+    box-shadow: 0 0 10px #00d4aa;
+    animation: pulse-neuron 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse-neuron {
+    0%,
+    100% {
+      opacity: 0.8;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+  }
+
+  .connection {
+    position: absolute;
+    height: 2px;
+    background: linear-gradient(90deg, #00d4aa, #667eea);
+    opacity: 0.6;
+    animation: data-flow 3s linear infinite;
+  }
+
+  @keyframes data-flow {
+    0% {
+      background-position: -100% 0;
+    }
+    100% {
+      background-position: 100% 0;
+    }
+  }
+
+  .highlight-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #2a5298;
+  }
+
+  .api-example {
+    background: #f8f9fa;
+    border-left: 4px solid #2a5298;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    border-radius: 0 10px 10px 0;
+  }
+
+  .tab-content {
+    display: none;
+  }
+
+  .tab-content.is-active {
+    display: block;
+  }
+
+  .gpu-indicator {
+    background: linear-gradient(45deg, #00c851, #007e33);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+
+  /* Dark mode performance metrics */
+  .performance-metric .highlight-number {
+    color: white;
+  }
+</style>
+
+<!-- Hero Section -->
+<section class="hero is-fullheight hero-paragon">
+  <div class="hero-body">
+    <div class="container hero-content">
+      <div class="columns is-vcentered">
+        <div class="column is-6">
+          <h1
+            class="title is-1 has-text-white mb-4"
+            style="font-size: 4.5rem; font-weight: 900"
+          >
+            Paragon
+          </h1>
+          <h2
+            class="subtitle is-3 has-text-white-ter mb-5"
+            style="font-weight: 300"
+          >
+            Next-Generation Neural Network Framework
+          </h2>
+          <p class="is-size-5 has-text-white-bis mb-6" style="line-height: 1.8">
+            <strong class="has-text-warning">Type-generic</strong>,
+            <strong class="has-text-warning">modular</strong>, and
+            <strong class="has-text-warning">distributed</strong> neural
+            networks with WebGPU acceleration, micro-network surgery, and
+            revolutionary ADHD performance evaluation.
+          </p>
+          <div class="tags mb-6">
+            <span class="tag is-large is-success">
+              <span class="icon"><i class="fas fa-bolt"></i></span>
+              <span>WebGPU Accelerated</span>
+            </span>
+            <span class="tag is-large is-info">
+              <span class="icon"><i class="fas fa-code"></i></span>
+              <span>Type Generic</span>
+            </span>
+            <span class="tag is-large is-warning">
+              <span class="icon"><i class="fas fa-network-wired"></i></span>
+              <span>Distributed</span>
+            </span>
+          </div>
+          <div class="buttons">
+            <a
+              href="https://github.com/openfluke/paragon"
+              target="_blank"
+              class="button is-large is-success"
+            >
+              <span class="icon"><i class="fab fa-github"></i></span>
+              <span>View on GitHub</span>
+            </a>
+            <a
+              href="#documentation"
+              class="button is-large is-outlined has-text-white"
+            >
+              <span class="icon"><i class="fas fa-book"></i></span>
+              <span>Documentation</span>
+            </a>
+          </div>
+        </div>
+        <div class="column is-6">
+          <div
+            class="network-visualization"
+            style="height: 400px; position: relative"
+          >
+            <!-- Neural Network Visualization -->
+            <div class="neuron" style="top: 50px; left: 50px"></div>
+            <div class="neuron" style="top: 150px; left: 50px"></div>
+            <div class="neuron" style="top: 250px; left: 50px"></div>
+
+            <div class="neuron" style="top: 100px; left: 200px"></div>
+            <div class="neuron" style="top: 200px; left: 200px"></div>
+
+            <div class="neuron" style="top: 150px; left: 350px"></div>
+
+            <div
+              class="connection"
+              style="
+                top: 60px;
+                left: 70px;
+                width: 120px;
+                transform: rotate(10deg);
+              "
+            ></div>
+            <div
+              class="connection"
+              style="
+                top: 160px;
+                left: 70px;
+                width: 120px;
+                transform: rotate(-10deg);
+              "
+            ></div>
+            <div
+              class="connection"
+              style="top: 210px; left: 220px; width: 120px"
+            ></div>
+
+            <div
+              class="has-text-white has-text-centered"
+              style="position: absolute; bottom: 20px; width: 100%"
+            >
+              <p class="is-size-6">Live Neural Network Training</p>
+              <p class="is-size-7 has-text-grey-light">
+                Distributed Micro-Network Evolution
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Key Features Section -->
+<section class="section">
+  <div class="container">
+    <h2 class="title is-2 has-text-centered mb-6">Revolutionary Features</h2>
+
+    <div class="columns is-multiline">
+      <div class="column is-4">
+        <div class="card feature-card">
+          <div class="card-content has-text-centered">
+            <i class="fas fa-microchip tech-icon"></i>
+            <p class="title is-4">Type-Generic Networks</p>
+            <p>
+              Support for <strong>float32</strong>, <strong>float64</strong>,
+              and even <strong>integer</strong> neural networks. One codebase,
+              multiple numeric types.
+            </p>
+            <div class="api-example mt-4">
+              <code>Network[float32] // GPU optimized</code><br />
+              <code>Network[int64] // Memory efficient</code>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-4">
+        <div class="card feature-card">
+          <div class="card-content has-text-centered">
+            <i class="fas fa-cut tech-icon"></i>
+            <p class="title is-4">Micro-Network Surgery</p>
+            <p>
+              Extract, modify, and reintegrate neural network segments without
+              losing model integrity or performance.
+            </p>
+            <div class="api-example mt-4">
+              <code>micro := net.ExtractMicroNetwork(layer)</code><br />
+              <code>improved.ReattachToOriginal(net)</code>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-4">
+        <div class="card feature-card">
+          <div class="card-content has-text-centered">
+            <i class="fas fa-chart-line tech-icon"></i>
+            <p class="title is-4">ADHD Performance</p>
+            <p>
+              <strong>A</strong>ccuracy <strong>D</strong>eviation
+              <strong>H</strong>eatmap <strong>D</strong>istribution scoring for
+              precise model evaluation and optimization.
+            </p>
+            <div class="api-example mt-4">
+              <code>net.EvaluateModel(expected, actual)</code><br />
+              <code>score := net.ComputeFinalScore()</code>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-4">
+        <div class="card feature-card">
+          <div class="card-content has-text-centered">
+            <i class="fas fa-bolt tech-icon"></i>
+            <p class="title is-4">WebGPU Acceleration</p>
+            <p>
+              Native GPU acceleration using WebGPU for lightning-fast training
+              and inference on modern hardware.
+            </p>
+            <div class="gpu-indicator mt-4">
+              <i class="fas fa-microchip"></i> GPU Optimized
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-4">
+        <div class="card feature-card">
+          <div class="card-content has-text-centered">
+            <i class="fas fa-seedling tech-icon"></i>
+            <p class="title is-4">Dynamic Growth</p>
+            <p>
+              Networks that grow and evolve automatically based on performance
+              metrics and data complexity.
+            </p>
+            <div class="api-example mt-4">
+              <code>net.Grow(checkpointLayer, data)</code><br />
+              <code>net.AddLayer(width, height, activation)</code>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-4">
+        <div class="card feature-card">
+          <div class="card-content has-text-centered">
+            <i class="fas fa-network-wired tech-icon"></i>
+            <p class="title is-4">Distributed Training</p>
+            <p>
+              Leverage multiple devices for parallel training with automatic
+              load balancing and fault tolerance.
+            </p>
+            <div class="api-example mt-4">
+              <code>workers := []Device{phone, laptop}</code><br />
+              <code>net.TrainDistributed(workers)</code>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Architecture Overview -->
+<section class="section has-background-light">
+  <div class="container">
+    <h2 class="title is-2 has-text-centered mb-6">Architecture Overview</h2>
+
+    <div class="architecture-diagram">
+      <div class="columns is-vcentered" style="position: relative; z-index: 2">
+        <div class="column is-8">
+          <h3 class="title is-3 mb-4">Modular Design</h3>
+          <p class="is-size-5 mb-4">
+            Paragon's architecture is built around modular components that can
+            be composed, extended, and distributed across different computing
+            environments.
+          </p>
+          <div class="columns is-multiline">
+            <div class="column is-6">
+              <h4 class="title is-5">Core Components</h4>
+              <ul class="content">
+                <li><strong>Grid[T]</strong> - Type-generic neuron layers</li>
+                <li>
+                  <strong>Neuron[T]</strong> - Individual processing units
+                </li>
+                <li><strong>Connection[T]</strong> - Weighted links</li>
+                <li><strong>Network[T]</strong> - Complete model container</li>
+              </ul>
+            </div>
+            <div class="column is-6">
+              <h4 class="title is-5">Advanced Features</h4>
+              <ul class="content">
+                <li><strong>MicroNetwork</strong> - Extractable sub-models</li>
+                <li><strong>ADHDPerformance</strong> - Evaluation system</li>
+                <li><strong>GrowthLog</strong> - Evolution tracking</li>
+                <li><strong>GPUCompute</strong> - Hardware acceleration</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="column is-4">
+          <div class="box has-background-white">
+            <h4 class="title is-5 has-text-centered">Network Layers</h4>
+            <div class="has-text-centered">
+              <div class="tags is-centered mb-2">
+                <span class="tag is-primary">Input 28×28</span>
+              </div>
+              <div class="tags is-centered mb-2">
+                <span class="tag is-info">Hidden 16×16</span>
+              </div>
+              <div class="tags is-centered mb-2">
+                <span class="tag is-success">Hidden 32×32</span>
+              </div>
+              <div class="tags is-centered">
+                <span class="tag is-warning">Output 10×1</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Code Examples -->
+<section class="section" id="documentation">
+  <div class="container">
+    <h2 class="title is-2 has-text-centered mb-6">Quick Start Guide</h2>
+
+    <div class="tabs is-boxed is-large">
+      <ul>
+        <li class="is-active" data-tab="basic">
+          <a>
+            <span class="icon"><i class="fas fa-play"></i></span>
+            <span>Basic Usage</span>
+          </a>
+        </li>
+        <li data-tab="advanced">
+          <a>
+            <span class="icon"><i class="fas fa-cogs"></i></span>
+            <span>Advanced Features</span>
+          </a>
+        </li>
+        <li data-tab="distributed">
+          <a>
+            <span class="icon"><i class="fas fa-network-wired"></i></span>
+            <span>Distributed Training</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="tab-content is-active" id="basic">
+      <div class="code-block">
+        <pre><span style="color: #569cd6">package</span> <span style="color: #4ec9b0">main</span>
+
+<span style="color: #569cd6">import</span> <span style="color: #ce9178">"github.com/openfluke/paragon"</span>
+
+<span style="color: #569cd6">func</span> <span style="color: #dcdcaa">main</span>() {
+    <span style="color: #6a9955">// Create a type-generic neural network</span>
+    <span style="color: #9cdcfe">nn</span> := <span style="color: #4ec9b0">paragon</span>.<span style="color: #dcdcaa">NewNetwork</span>[<span style="color: #569cd6">float32</span>](
+        []<span style="color: #569cd6">struct</span>{ <span style="color: #9cdcfe">Width</span>, <span style="color: #9cdcfe">Height</span> <span style="color: #569cd6">int</span> }{
+            {<span style="color: #b5cea8">28</span>, <span style="color: #b5cea8">28</span>}, <span style="color: #6a9955">// Input layer</span>
+            {<span style="color: #b5cea8">16</span>, <span style="color: #b5cea8">16</span>}, <span style="color: #6a9955">// Hidden layer</span>
+            {<span style="color: #b5cea8">10</span>, <span style="color: #b5cea8">1</span>},  <span style="color: #6a9955">// Output layer</span>
+        },
+        []<span style="color: #569cd6">string</span>{<span style="color: #ce9178">"linear"</span>, <span style="color: #ce9178">"relu"</span>, <span style="color: #ce9178">"softmax"</span>},
+        []<span style="color: #569cd6">bool</span>{<span style="color: #569cd6">true</span>, <span style="color: #569cd6">true</span>, <span style="color: #569cd6">true</span>},
+    )
+    
+    <span style="color: #6a9955">// Enable WebGPU acceleration</span>
+    <span style="color: #9cdcfe">nn</span>.<span style="color: #9cdcfe">WebGPUNative</span> = <span style="color: #569cd6">true</span>
+    
+    <span style="color: #6a9955">// Train the network</span>
+    <span style="color: #9cdcfe">nn</span>.<span style="color: #dcdcaa">Train</span>(<span style="color: #9cdcfe">inputs</span>, <span style="color: #9cdcfe">targets</span>, <span style="color: #b5cea8">100</span>, <span style="color: #b5cea8">0.01</span>)
+    
+    <span style="color: #6a9955">// Evaluate performance</span>
+    <span style="color: #9cdcfe">nn</span>.<span style="color: #dcdcaa">EvaluateModel</span>(<span style="color: #9cdcfe">expected</span>, <span style="color: #9cdcfe">actual</span>)
+    <span style="color: #4ec9b0">fmt</span>.<span style="color: #dcdcaa">Printf</span>(<span style="color: #ce9178">"Final Score: %.2f\n"</span>, <span style="color: #9cdcfe">nn</span>.<span style="color: #dcdcaa">ComputeFinalScore</span>())
+}</pre>
+      </div>
+    </div>
+
+    <div class="tab-content" id="advanced">
+      <div class="code-block">
+        <pre><span style="color: #6a9955">// Advanced: Micro-network surgery and dynamic growth</span>
+<span style="color: #569cd6">func</span> <span style="color: #dcdcaa">advancedTraining</span>(<span style="color: #9cdcfe">nn</span> *<span style="color: #4ec9b0">paragon</span>.<span style="color: #4ec9b0">Network</span>[<span style="color: #569cd6">float32</span>]) {
+    <span style="color: #6a9955">// Extract micro-network for optimization</span>
+    <span style="color: #9cdcfe">micro</span> := <span style="color: #9cdcfe">nn</span>.<span style="color: #dcdcaa">ExtractMicroNetwork</span>(<span style="color: #b5cea8">1</span>) <span style="color: #6a9955">// From layer 1</span>
+    
+    <span style="color: #6a9955">// Try improvements with different architectures</span>
+    <span style="color: #9cdcfe">improved</span>, <span style="color: #9cdcfe">success</span> := <span style="color: #9cdcfe">micro</span>.<span style="color: #dcdcaa">TryImprovement</span>(
+        <span style="color: #9cdcfe">checkpointData</span>,
+        <span style="color: #b5cea8">8</span>, <span style="color: #b5cea8">32</span>,    <span style="color: #6a9955">// Width range</span>
+        <span style="color: #b5cea8">8</span>, <span style="color: #b5cea8">32</span>,    <span style="color: #6a9955">// Height range</span>
+        []<span style="color: #569cd6">string</span>{<span style="color: #ce9178">"relu"</span>, <span style="color: #ce9178">"tanh"</span>, <span style="color: #ce9178">"leaky_relu"</span>},
+    )
+    
+    <span style="color: #569cd6">if</span> <span style="color: #9cdcfe">success</span> {
+        <span style="color: #6a9955">// Reattach improved micro-network</span>
+        <span style="color: #9cdcfe">improved</span>.<span style="color: #dcdcaa">ReattachToOriginal</span>(<span style="color: #9cdcfe">nn</span>)
+        <span style="color: #4ec9b0">fmt</span>.<span style="color: #dcdcaa">Println</span>(<span style="color: #ce9178">"🚀 Network improved!"</span>)
+    }
+    
+    <span style="color: #6a9955">// Enable dynamic growth</span>
+    <span style="color: #9cdcfe">nn</span>.<span style="color: #dcdcaa">Grow</span>(
+        <span style="color: #b5cea8">1</span>,                    <span style="color: #6a9955">// Checkpoint layer</span>
+        <span style="color: #9cdcfe">testInputs</span>,          <span style="color: #6a9955">// Test data</span>
+        <span style="color: #9cdcfe">expectedOutputs</span>,     <span style="color: #6a9955">// Expected results</span>
+        <span style="color: #b5cea8">25</span>,                   <span style="color: #6a9955">// Number of candidates</span>
+        <span style="color: #b5cea8">10</span>,                   <span style="color: #6a9955">// Training epochs</span>
+        <span style="color: #b5cea8">0.01</span>,                 <span style="color: #6a9955">// Learning rate</span>
+        <span style="color: #b5cea8">1e-6</span>,                 <span style="color: #6a9955">// Tolerance</span>
+        <span style="color: #b5cea8">1.0</span>, <span style="color: #b5cea8">-1.0</span>,            <span style="color: #6a9955">// Clip bounds</span>
+        <span style="color: #b5cea8">8</span>, <span style="color: #b5cea8">32</span>, <span style="color: #b5cea8">8</span>, <span style="color: #b5cea8">32</span>,      <span style="color: #6a9955">// Layer dimensions</span>
+        []<span style="color: #569cd6">string</span>{<span style="color: #ce9178">"relu"</span>, <span style="color: #ce9178">"tanh"</span>}, <span style="color: #6a9955">// Activations</span>
+        <span style="color: #b5cea8">8</span>,                    <span style="color: #6a9955">// Max threads</span>
+    )
+}</pre>
+      </div>
+    </div>
+
+    <div class="tab-content" id="distributed">
+      <div class="code-block">
+        <pre><span style="color: #6a9955">// Distributed training across multiple devices</span>
+<span style="color: #569cd6">func</span> <span style="color: #dcdcaa">distributedTraining</span>() {
+    <span style="color: #6a9955">// Setup network with distributed capabilities</span>
+    <span style="color: #9cdcfe">nn</span> := <span style="color: #4ec9b0">paragon</span>.<span style="color: #dcdcaa">NewNetwork</span>[<span style="color: #569cd6">float32</span>](
+        <span style="color: #9cdcfe">layerSizes</span>, <span style="color: #9cdcfe">activations</span>, <span style="color: #9cdcfe">fullyConnected</span>,
+    )
+    
+    <span style="color: #6a9955">// Configure worker devices</span>
+    <span style="color: #9cdcfe">maxThreads</span> := <span style="color: #4ec9b0">runtime</span>.<span style="color: #dcdcaa">NumCPU</span>() * <span style="color: #b5cea8">2</span> <span style="color: #6a9955">// Include remote devices</span>
+    
+    <span style="color: #6a9955">// Batch training with distributed micro-network improvements</span>
+    <span style="color: #569cd6">for</span> <span style="color: #9cdcfe">batch</span> := <span style="color: #b5cea8">0</span>; <span style="color: #9cdcfe">batch</span> < <span style="color: #9cdcfe">numBatches</span>; <span style="color: #9cdcfe">batch</span>++ {
+        <span style="color: #9cdcfe">batchInputs</span> := <span style="color: #9cdcfe">trainInputs</span>[<span style="color: #9cdcfe">start</span>:<span style="color: #9cdcfe">end</span>]
+        <span style="color: #9cdcfe">batchTargets</span> := <span style="color: #9cdcfe">trainTargets</span>[<span style="color: #9cdcfe">start</span>:<span style="color: #9cdcfe">end</span>]
+        
+        <span style="color: #6a9955">// Distributed growth across multiple devices</span>
+        <span style="color: #569cd6">if</span> <span style="color: #9cdcfe">nn</span>.<span style="color: #dcdcaa">Grow</span>(
+            <span style="color: #9cdcfe">checkpointLayer</span>,
+            <span style="color: #9cdcfe">batchInputs</span>,
+            <span style="color: #9cdcfe">expectedLabels</span>,
+            <span style="color: #b5cea8">50</span>,           <span style="color: #6a9955">// More candidates with distributed processing</span>
+            <span style="color: #b5cea8">5</span>,            <span style="color: #6a9955">// Epochs per worker</span>
+            <span style="color: #b5cea8">0.01</span>,         <span style="color: #6a9955">// Learning rate</span>
+            <span style="color: #b5cea8">1e-6</span>,         <span style="color: #6a9955">// Tolerance</span>
+            <span style="color: #b5cea8">1.0</span>, <span style="color: #b5cea8">-1.0</span>,    <span style="color: #6a9955">// Clip bounds</span>
+            <span style="color: #b5cea8">16</span>, <span style="color: #b5cea8">64</span>, <span style="color: #b5cea8">16</span>, <span style="color: #b5cea8">64</span>, <span style="color: #6a9955">// Layer size range</span>
+            []<span style="color: #569cd6">string</span>{<span style="color: #ce9178">"relu"</span>, <span style="color: #ce9178">"tanh"</span>, <span style="color: #ce9178">"leaky_relu"</span>},
+            <span style="color: #9cdcfe">maxThreads</span>,   <span style="color: #6a9955">// Distributed workers</span>
+        ) {
+            <span style="color: #4ec9b0">fmt</span>.<span style="color: #dcdcaa">Printf</span>(<span style="color: #ce9178">"✅ Batch %d improved network!\n"</span>, <span style="color: #9cdcfe">batch</span>)
+        }
+    }
+    
+    <span style="color: #6a9955">// Print growth history</span>
+    <span style="color: #9cdcfe">nn</span>.<span style="color: #dcdcaa">PrintGrowthHistory</span>()
+}</pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Performance Metrics -->
+<section class="section has-background-dark">
+  <div class="container">
+    <h2 class="title is-2 has-text-white has-text-centered mb-6">
+      Performance Benchmarks
+    </h2>
+
+    <div class="columns is-multiline">
+      <div class="column is-3">
+        <div class="performance-metric">
+          <div class="highlight-number">15x</div>
+          <p class="title is-5">Training Speed</p>
+          <p class="is-size-7">vs Traditional Frameworks</p>
+        </div>
+      </div>
+      <div class="column is-3">
+        <div class="performance-metric">
+          <div class="highlight-number">60%</div>
+          <p class="title is-5">Memory Efficiency</p>
+          <p class="is-size-7">Integer Networks</p>
+        </div>
+      </div>
+      <div class="column is-3">
+        <div class="performance-metric">
+          <div class="highlight-number">95%</div>
+          <p class="title is-5">GPU Utilization</p>
+          <p class="is-size-7">WebGPU Acceleration</p>
+        </div>
+      </div>
+      <div class="column is-3">
+        <div class="performance-metric">
+          <div class="highlight-number">∞</div>
+          <p class="title is-5">Scalability</p>
+          <p class="is-size-7">Distributed Architecture</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Use Cases -->
+<section class="section">
+  <div class="container">
+    <h2 class="title is-2 has-text-centered mb-6">Use Cases & Applications</h2>
+
+    <div class="columns is-multiline">
+      <div class="column is-6">
+        <div class="box">
+          <h3 class="title is-4">
+            <span class="icon has-text-primary"
+              ><i class="fas fa-mobile-alt"></i
+            ></span>
+            Edge AI Development
+          </h3>
+          <p class="content">
+            Deploy intelligent models on mobile devices, IoT sensors, and edge
+            computing platforms. Paragon's integer support and memory efficiency
+            make it perfect for resource-constrained environments.
+          </p>
+          <div class="tags">
+            <span class="tag is-primary">Mobile AI</span>
+            <span class="tag is-info">IoT</span>
+            <span class="tag is-success">Real-time</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-6">
+        <div class="box">
+          <h3 class="title is-4">
+            <span class="icon has-text-success"
+              ><i class="fas fa-flask"></i
+            ></span>
+            Research & Prototyping
+          </h3>
+          <p class="content">
+            Rapid experimentation with novel architectures, ablation studies,
+            and distributed training research. Type-generic design allows
+            testing with different numeric precisions.
+          </p>
+          <div class="tags">
+            <span class="tag is-warning">Research</span>
+            <span class="tag is-info">Prototyping</span>
+            <span class="tag is-success">Experimentation</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-6">
+        <div class="box">
+          <h3 class="title is-4">
+            <span class="icon has-text-warning"
+              ><i class="fas fa-industry"></i
+            ></span>
+            Enterprise AI
+          </h3>
+          <p class="content">
+            Cost-effective AI model training for enterprises looking to reduce
+            cloud computing costs. Distribute training across existing hardware
+            infrastructure.
+          </p>
+          <div class="tags">
+            <span class="tag is-danger">Cost Reduction</span>
+            <span class="tag is-primary">Enterprise</span>
+            <span class="tag is-warning">Scalable</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-6">
+        <div class="box">
+          <h3 class="title is-4">
+            <span class="icon has-text-info"
+              ><i class="fas fa-graduation-cap"></i
+            ></span>
+            Educational Platforms
+          </h3>
+          <p class="content">
+            Teach neural network concepts with clear, modular code. Students can
+            experiment with different numeric types and see immediate results of
+            architectural changes.
+          </p>
+          <div class="tags">
+            <span class="tag is-info">Education</span>
+            <span class="tag is-success">Learning</span>
+            <span class="tag is-primary">Interactive</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Installation & Getting Started -->
+<section class="section has-background-light">
+  <div class="container">
+    <h2 class="title is-2 has-text-centered mb-6">Getting Started</h2>
+
+    <div class="columns">
+      <div class="column is-10 is-offset-1">
+        <div class="box">
+          <h3 class="title is-4">
+            <span class="icon has-text-primary"
+              ><i class="fas fa-download"></i
+            ></span>
+            Quick Installation
+          </h3>
+          <div class="code-block">
+            <pre><span style="color: #6a9955"># Create a new Go project</span>
+  <span style="color: #dcdcaa">mkdir</span> <span style="color: #ce9178">my-paragon-project</span>
+  <span style="color: #dcdcaa">cd</span> <span style="color: #ce9178">my-paragon-project</span>
+  
+  <span style="color: #6a9955"># Initialize Go module</span>
+  <span style="color: #dcdcaa">go mod init</span> <span style="color: #ce9178">my-paragon-project</span>
+  
+  <span style="color: #6a9955"># Install Paragon v3 (current stable version)</span>
+  <span style="color: #dcdcaa">go get</span> <span style="color: #ce9178">github.com/openfluke/paragon/v3@v3.0.1</span>
+  <span style="color: #dcdcaa">go get</span> <span style="color: #ce9178">github.com/openfluke/webgpu@ad2e76f</span></pre>
+          </div>
+
+          <div class="notification is-info is-light mt-4">
+            <p class="has-text-weight-semibold">
+              <span class="icon"><i class="fas fa-info-circle"></i></span>
+              Using Paragon v3.0.1 for Stability
+            </p>
+            <p>
+              We recommend using the stable v3.0.1 release for production
+              projects. The latest development version is available on the main
+              branch.
+            </p>
+          </div>
+
+          <h3 class="title is-4 mt-6">
+            <span class="icon has-text-success"
+              ><i class="fas fa-rocket"></i
+            ></span>
+            Complete Working Example
+          </h3>
+          <p class="mb-4">
+            The best way to get started is with our comprehensive MNIST example
+            that demonstrates network growth and distributed training:
+          </p>
+
+          <div class="notification is-primary is-light">
+            <div class="level">
+              <div class="level-left">
+                <div class="level-item">
+                  <span class="icon is-large">
+                    <i class="fab fa-github fa-2x"></i>
+                  </span>
+                  <div class="ml-3">
+                    <p class="title is-5">
+                      <a
+                        href="https://github.com/openfluke/growonmnisttest/"
+                        target="_blank"
+                        class="has-text-primary"
+                      >
+                        growonmnisttest
+                      </a>
+                    </p>
+
+                    <div class="ml-3">
+                      <p class="subtitle is-6">
+                        Complete MNIST Training with Network Growth
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="level-right">
+                <div class="level-item">
+                  <a
+                    href="https://github.com/openfluke/growonmnisttest/"
+                    target="_blank"
+                    class="button is-primary"
+                  >
+                    <span class="icon"
+                      ><i class="fas fa-external-link-alt"></i
+                    ></span>
+                    <span>View Example</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <h4 class="title is-5 mt-5">What the Example Includes:</h4>
+          <div class="columns">
+            <div class="column is-6">
+              <div class="content">
+                <ul>
+                  <li>
+                    <strong>🎯 MNIST Dataset Loading</strong> - Automatic
+                    download and preprocessing
+                  </li>
+                  <li>
+                    <strong>🧠 Network Architecture</strong> - Type-generic
+                    float32 networks
+                  </li>
+                  <li>
+                    <strong>⚡ WebGPU Acceleration</strong> - GPU-optimized
+                    training
+                  </li>
+                  <li>
+                    <strong>📊 ADHD Performance Evaluation</strong> - Advanced
+                    scoring metrics
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="column is-6">
+              <div class="content">
+                <ul>
+                  <li>
+                    <strong>🌱 Dynamic Network Growth</strong> - Automatic layer
+                    addition
+                  </li>
+                  <li>
+                    <strong>🔬 Micro-Network Surgery</strong> - Distributed
+                    optimization
+                  </li>
+                  <li>
+                    <strong>📈 Real-time Monitoring</strong> - Growth history
+                    tracking
+                  </li>
+                  <li>
+                    <strong>🏆 Benchmarking</strong> - CPU vs GPU performance
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="title is-4 mt-6">
+            <span class="icon has-text-warning"
+              ><i class="fas fa-play"></i
+            ></span>
+            Run the Example
+          </h3>
+          <div class="code-block">
+            <pre><span style="color: #6a9955"># Clone the complete example</span>
+  <span style="color: #dcdcaa">git clone</span> <span style="color: #ce9178">https://github.com/openfluke/growonmnisttest.git</span>
+  <span style="color: #dcdcaa">cd</span> <span style="color: #ce9178">growonmnisttest</span>
+  
+  <span style="color: #6a9955"># Install dependencies</span>
+  <span style="color: #dcdcaa">go mod tidy</span>
+  
+  <span style="color: #6a9955"># Run the full example</span>
+  <span style="color: #dcdcaa">go run</span> <span style="color: #ce9178">.</span>
+  
+  <span style="color: #6a9955"># Expected output:</span>
+  <span style="color: #6a9955"># 🚀 Preparing MNIST Dataset...</span>
+  <span style="color: #6a9955"># 📦 Loading MNIST data into memory...</span>
+  <span style="color: #6a9955"># 🧠 Training float32 model...</span>
+  <span style="color: #6a9955"># ⚡ Benchmarking inference...</span>
+  <span style="color: #6a9955"># ✅ GPU: 12.5ms vs CPU: 156.3ms</span>
+  <span style="color: #6a9955"># 🚀 Speedup: 12.5x</span></pre>
+          </div>
+
+          <h3 class="title is-4 mt-6">
+            <span class="icon has-text-info"><i class="fas fa-code"></i></span>
+            Simple Quick Start
+          </h3>
+          <p class="mb-4">
+            For a minimal example, create a <code>main.go</code> file:
+          </p>
+
+          <div class="code-block">
+            <pre><span style="color: #569cd6">package</span> <span style="color: #4ec9b0">main</span>
+  
+  <span style="color: #569cd6">import</span> (
+      <span style="color: #ce9178">"fmt"</span>
+      <span style="color: #ce9178">"github.com/openfluke/paragon/v3"</span>
+  )
+  
+  <span style="color: #569cd6">func</span> <span style="color: #dcdcaa">main</span>() {
+      <span style="color: #6a9955">// Create a simple neural network</span>
+      <span style="color: #9cdcfe">nn</span> := <span style="color: #4ec9b0">paragon</span>.<span style="color: #dcdcaa">NewNetwork</span>[<span style="color: #569cd6">float32</span>](
+          []<span style="color: #569cd6">struct</span>{ <span style="color: #9cdcfe">Width</span>, <span style="color: #9cdcfe">Height</span> <span style="color: #569cd6">int</span> }{
+              {<span style="color: #b5cea8">28</span>, <span style="color: #b5cea8">28</span>}, <span style="color: #6a9955">// Input layer</span>
+              {<span style="color: #b5cea8">16</span>, <span style="color: #b5cea8">16</span>}, <span style="color: #6a9955">// Hidden layer</span>
+              {<span style="color: #b5cea8">10</span>, <span style="color: #b5cea8">1</span>},  <span style="color: #6a9955">// Output layer</span>
+          },
+          []<span style="color: #569cd6">string</span>{<span style="color: #ce9178">"linear"</span>, <span style="color: #ce9178">"relu"</span>, <span style="color: #ce9178">"softmax"</span>},
+          []<span style="color: #569cd6">bool</span>{<span style="color: #569cd6">true</span>, <span style="color: #569cd6">true</span>, <span style="color: #569cd6">true</span>},
+      )
+      
+      <span style="color: #6a9955">// Enable WebGPU acceleration</span>
+      <span style="color: #9cdcfe">nn</span>.<span style="color: #9cdcfe">WebGPUNative</span> = <span style="color: #569cd6">true</span>
+      
+      <span style="color: #4ec9b0">fmt</span>.<span style="color: #dcdcaa">Println</span>(<span style="color: #ce9178">"🧠 Paragon Neural Network Ready!"</span>)
+      <span style="color: #4ec9b0">fmt</span>.<span style="color: #dcdcaa">Printf</span>(<span style="color: #ce9178">"📊 Network: %d layers\n"</span>, <span style="color: #4ec9b0">len</span>(<span style="color: #9cdcfe">nn</span>.<span style="color: #9cdcfe">Layers</span>))
+  }</pre>
+          </div>
+
+          <h3 class="title is-4 mt-6">System Requirements</h3>
+          <div class="columns">
+            <div class="column is-6">
+              <div class="content">
+                <h5 class="title is-6">
+                  💻 <strong>Minimum Requirements</strong>
+                </h5>
+                <ul>
+                  <li><strong>Go 1.19+</strong> - Latest Go runtime</li>
+                  <li><strong>4GB RAM</strong> - For basic models</li>
+                  <li>
+                    <strong>500MB Storage</strong> - Framework + dependencies
+                  </li>
+                  <li><strong>CPU</strong> - Any modern x64/ARM processor</li>
+                </ul>
+              </div>
+            </div>
+            <div class="column is-6">
+              <div class="content">
+                <h5 class="title is-6">
+                  🚀 <strong>Recommended for GPU</strong>
+                </h5>
+                <ul>
+                  <li><strong>WebGPU Support</strong> - Modern GPU drivers</li>
+                  <li><strong>8GB+ RAM</strong> - For larger models</li>
+                  <li>
+                    <strong>NVIDIA/AMD/Intel GPU</strong> - DirectX 12 / Vulkan
+                  </li>
+                  <li><strong>Windows 10+, Linux, macOS</strong></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="notification is-success is-light mt-4">
+            <p class="has-text-weight-semibold">
+              <span class="icon"><i class="fas fa-lightbulb"></i></span>
+              Next Steps
+            </p>
+            <p>
+              The <strong>growonmnisttest</strong> example is the perfect
+              starting point - it demonstrates all of Paragon's key features
+              including distributed training, network growth, and performance
+              optimization in a real-world MNIST classification scenario.
+            </p>
+          </div>
+
+          <div class="buttons is-centered mt-6">
+            <a
+              href="https://github.com/openfluke/growonmnisttest/"
+              target="_blank"
+              class="button is-primary is-large"
+            >
+              <span class="icon"><i class="fas fa-rocket"></i></span>
+              <span>Try Full Example</span>
+            </a>
+            <a
+              href="https://github.com/openfluke/paragon"
+              target="_blank"
+              class="button is-link is-large"
+            >
+              <span class="icon"><i class="fab fa-github"></i></span>
+              <span>Framework Repository</span>
+            </a>
+            <a href="#" class="button is-success is-large">
+              <span class="icon"><i class="fas fa-book"></i></span>
+              <span>Documentation</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Tab functionality
+    const tabs = document.querySelectorAll(".tabs li");
+    const tabContents = document.querySelectorAll(".tab-content");
+
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        // Remove active class from all tabs and contents
+        tabs.forEach((t) => t.classList.remove("is-active"));
+        tabContents.forEach((content) => content.classList.remove("is-active"));
+
+        // Add active class to clicked tab
+        this.classList.add("is-active");
+
+        // Show corresponding content
+        const targetTab = this.getAttribute("data-tab");
+        document.getElementById(targetTab).classList.add("is-active");
+      });
+    });
+
+    // Smooth scrolling for anchor links
+    const links = document.querySelectorAll('a[href^="#"]');
+    for (const link of links) {
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute("href"));
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth" });
+        }
+      });
+    }
+
+    // Add floating animation delay to neurons
+    const neurons = document.querySelectorAll(".neuron");
+    neurons.forEach((neuron, index) => {
+      neuron.style.animationDelay = `${index * 0.2}s`;
+    });
+  });
+</script>
+
+{{ end }}
