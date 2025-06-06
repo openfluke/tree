@@ -8,6 +8,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"strings"
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/template/html/v2"
@@ -20,7 +21,7 @@ var templateFS embed.FS
 func host() {
 	_ = godotenv.Load()
 
-	port := "8123"
+	port := "8080"
 	if v := os.Getenv("PORT"); v != "" {
 		port = v
 	}
@@ -105,9 +106,34 @@ func host() {
 		return c.Render("layout", data)
 	})
 
-	log.Printf("Starting Fiber server on port %s\n", port)
+	app.Get("/demo", func(c *fiber.Ctx) error {
+		data := fiber.Map{
+			"Title": "Demo",
+			"User":  "Guest",
+		}
+		content, err := renderContent(engine, "demo", data)
+		if err != nil {
+			return err
+		}
+		data["Content"] = template.HTML(content)
+		return c.Render("layout", data)
+	})
+
+	/*log.Printf("Starting Fiber server on port %s\n", port)
 	if err := app.Listen(":" + port); err != nil {
 		log.Fatalf("Failed to start server: %v", err)
+	}*/
+
+	// Detect SSL certificates
+	certFile := "./cert.pem"
+	keyFile := "./key.pem"
+
+	if isTLSEnabled() {
+		log.Printf("SSL certificates detected. Running HTTPS on port 4443...")
+		log.Fatal(app.ListenTLS("0.0.0.0:4433", certFile, keyFile))
+	} else {
+		log.Printf("No SSL certificates found. Running HTTP on port 8080...")
+		log.Fatal(app.Listen("0.0.0.0:" + port))
 	}
 }
 
@@ -121,4 +147,9 @@ func renderContent(engine *html.Engine, tmplName string, data fiber.Map) (string
 		return "", err
 	}
 	return buf.String(), nil
+}
+
+func isTLSEnabled() bool {
+	val := strings.ToLower(strings.TrimSpace(os.Getenv("ENABLE_TLS")))
+	return val == "true" || val == "1" || val == "yes"
 }

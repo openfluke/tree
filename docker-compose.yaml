@@ -1,0 +1,26 @@
+version: "3.8"
+
+services:
+  openfluke-node1:
+    build: .
+    container_name: openfluke-node1
+    restart: always
+    ports:
+      - "80:8080"
+      - "443:4443"
+    environment:
+      - NODE_ID=1
+
+  openfluke-node2:
+    build: .
+    container_name: openfluke-node2
+    restart: always
+    environment:
+      - NODE_ID=2
+
+  openfluke-node3:
+    build: .
+    container_name: openfluke-node3
+    restart: always
+    environment:
+      - NODE_ID=3

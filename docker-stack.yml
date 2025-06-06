@@ -1,0 +1,16 @@
+# docker-stack.yml
+version: "3.8"
+
+services:
+  node:
+    image: tree:latest
+    deploy:
+      mode: replicated
+      replicas: 3
+      restart_policy:
+        condition: any
+    ports:
+      - "80:8080"
+      - "443:4443"
+    environment:
+      - ENABLE_TLS=true
