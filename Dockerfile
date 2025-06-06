@@ -18,7 +18,7 @@ COPY .env .env
 COPY cert.pem cert.pem
 COPY key.pem key.pem
 
-EXPOSE 8080
-EXPOSE 4443
+EXPOSE 80
+EXPOSE 443
 
 ENTRYPOINT ["/app/openfluke"]

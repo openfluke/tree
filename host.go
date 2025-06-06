@@ -21,7 +21,7 @@ var templateFS embed.FS
 func host() {
 	_ = godotenv.Load()
 
-	port := "8080"
+	port := "80"
 	if v := os.Getenv("PORT"); v != "" {
 		port = v
 	}
@@ -130,7 +130,8 @@ func host() {
 
 	if isTLSEnabled() {
 		log.Printf("SSL certificates detected. Running HTTPS on port 4443...")
-		log.Fatal(app.ListenTLS("0.0.0.0:4433", certFile, keyFile))
+		log.Fatal(app.ListenTLS("0.0.0.0:443", certFile, keyFile))
+
 	} else {
 		log.Printf("No SSL certificates found. Running HTTP on port 8080...")
 		log.Fatal(app.Listen("0.0.0.0:" + port))
