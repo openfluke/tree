@@ -1,16 +1,37 @@
-# docker-stack.yml
-version: "3.8"
+version: "3.9"
 
 services:
   node:
     image: tree:latest
     deploy:
-      mode: replicated
-      replicas: 3
+      replicas: 1
       restart_policy:
-        condition: any
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 30s
+      placement:
+        constraints:
+          - node.labels.tree == host1
     ports:
       - "80:8080"
       - "443:4443"
-    environment:
-      - ENABLE_TLS=true
+    volumes:
+      - certs:/app/certs
+      - static:/app/static
+      - templates:/app/templates
+    configs:
+      - source: env_file
+        target: /app/.env
+
+volumes:
+  certs:
+    external: false
+  static:
+    external: false
+  templates:
+    external: false
+
+configs:
+  env_file:
+    file: .env
