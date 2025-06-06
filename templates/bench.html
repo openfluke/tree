@@ -157,75 +157,74 @@
     </style>
   </head>
   <body>
-    <!-- Hero Section -->
-    <section class="hero is-medium hero-demo">
-      <div class="hero-body">
-        <div class="container has-text-centered">
-          <h1 class="title is-1 has-text-white">
-            <span class="icon is-large"><i class="fas fa-brain"></i></span>
-            Paragon AI Live Demo
-          </h1>
-          <h2 class="subtitle is-4 has-text-white-ter">
-            Experience type-generic neural networks with WebGPU acceleration and
-            distributed growth
-          </h2>
-          <div id="wasmStatus" class="notification status-card status-loading">
-            <span class="icon"><i class="fas fa-spinner fa-spin"></i></span>
-            <span>Loading Paragon WASM Engine...</span>
-          </div>
+  <!-- Hero Section -->
+  <section class="hero is-medium hero-demo">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title is-1 has-text-white">
+          <span class="icon is-large"><i class="fas fa-brain"></i></span>
+          Paragon AI Live Demo
+        </h1>
+        <h2 class="subtitle is-4 has-text-white-ter">
+          Experience type-generic neural networks with WebGPU acceleration and
+          distributed growth
+        </h2>
+        <div id="wasmStatus" class="notification status-card status-loading">
+          <span class="icon"><i class="fas fa-spinner fa-spin"></i></span>
+          <span>Loading Paragon WASM Engine...</span>
+        </div>
 
-          <!-- Feature Overview -->
-          <div class="columns is-centered mt-5">
-            <div class="column is-10">
-              <div
-                class="box"
-                style="
-                  background: rgba(255, 255, 255, 0.1);
-                  border: 1px solid rgba(255, 255, 255, 0.2);
-                "
-              >
-                <div class="columns is-vcentered">
-                  <div class="column">
-                    <div class="has-text-centered has-text-white">
-                      <span class="icon is-large has-text-success">
-                        <i class="fas fa-bolt fa-2x"></i>
-                      </span>
-                      <p class="title is-6 has-text-white mt-2">
-                        WebGPU Acceleration
-                      </p>
-                      <p class="is-size-7">GPU vs CPU benchmarking</p>
-                    </div>
+        <!-- Feature Overview -->
+        <div class="columns is-centered mt-5">
+          <div class="column is-10">
+            <div
+              class="box"
+              style="
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+              "
+            >
+              <div class="columns is-vcentered">
+                <div class="column">
+                  <div class="has-text-centered has-text-white">
+                    <span class="icon is-large has-text-success">
+                      <i class="fas fa-bolt fa-2x"></i>
+                    </span>
+                    <p class="title is-6 has-text-white mt-2">
+                      WebGPU Acceleration
+                    </p>
+                    <p class="is-size-7">GPU vs CPU benchmarking</p>
                   </div>
-                  <div class="column">
-                    <div class="has-text-centered has-text-white">
-                      <span class="icon is-large has-text-info">
-                        <i class="fas fa-code fa-2x"></i>
-                      </span>
-                      <p class="title is-6 has-text-white mt-2">Type-Generic</p>
-                      <p class="is-size-7">Float32, Int32, Uint32 networks</p>
-                    </div>
+                </div>
+                <div class="column">
+                  <div class="has-text-centered has-text-white">
+                    <span class="icon is-large has-text-info">
+                      <i class="fas fa-code fa-2x"></i>
+                    </span>
+                    <p class="title is-6 has-text-white mt-2">Type-Generic</p>
+                    <p class="is-size-7">Float32, Int32, Uint32 networks</p>
                   </div>
-                  <div class="column">
-                    <div class="has-text-centered has-text-white">
-                      <span class="icon is-large has-text-warning">
-                        <i class="fas fa-seedling fa-2x"></i>
-                      </span>
-                      <p class="title is-6 has-text-white mt-2">
-                        Network Growth
-                      </p>
-                      <p class="is-size-7">Self-evolving architectures</p>
-                    </div>
+                </div>
+                <div class="column">
+                  <div class="has-text-centered has-text-white">
+                    <span class="icon is-large has-text-warning">
+                      <i class="fas fa-seedling fa-2x"></i>
+                    </span>
+                    <p class="title is-6 has-text-white mt-2">
+                      Network Growth
+                    </p>
+                    <p class="is-size-7">Self-evolving architectures</p>
                   </div>
-                  <div class="column">
-                    <div class="has-text-centered has-text-white">
-                      <span class="icon is-large has-text-danger">
-                        <i class="fas fa-chart-line fa-2x"></i>
-                      </span>
-                      <p class="title is-6 has-text-white mt-2">
-                        ADHD Evaluation
-                      </p>
-                      <p class="is-size-7">Advanced performance metrics</p>
-                    </div>
+                </div>
+                <div class="column">
+                  <div class="has-text-centered has-text-white">
+                    <span class="icon is-large has-text-danger">
+                      <i class="fas fa-chart-line fa-2x"></i>
+                    </span>
+                    <p class="title is-6 has-text-white mt-2">
+                      ADHD Evaluation
+                    </p>
+                    <p class="is-size-7">Advanced performance metrics</p>
                   </div>
                 </div>
               </div>
@@ -233,1181 +232,1209 @@
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <div class="container">
+    <!-- Step 1: Performance Benchmarking -->
+    <section class="demo-section">
+      <div class="content">
+        <h2 class="title is-2">
+          <span class="step-indicator">1</span>
+          Performance Benchmarking
+        </h2>
+        <p class="subtitle">
+          Test CPU vs GPU performance across different network types and
+          activation functions
+        </p>
+      </div>
+
+      <div class="columns">
+        <div class="column is-4">
+          <div class="box">
+            <h4 class="title is-5">
+              <span class="icon"><i class="fas fa-stopwatch"></i></span>
+              Benchmark Settings
+            </h4>
+
+            <div class="notification is-info is-light">
+              <p><strong>Single Forward Pass Timing</strong></p>
+              <p>Each test runs one forward pass for precise GPU vs CPU measurement (like the working index.html demo)</p>
+            </div>
+
+            <div class="field">
+              <label class="label">Network Types</label>
+              <div class="control">
+                <label class="checkbox">
+                  <input type="checkbox" id="testFloat32" checked />
+                  Float32 (GPU Optimized)
+                </label>
+              </div>
+              <div class="control">
+                <label class="checkbox">
+                  <input type="checkbox" id="testInt32" checked />
+                  Int32 (Memory Efficient)
+                </label>
+              </div>
+              <div class="control">
+                <label class="checkbox">
+                  <input type="checkbox" id="testUint32" />
+                  Uint32 (Experimental)
+                </label>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Activations to Test</label>
+              <div class="control">
+                <div class="select is-multiple">
+                  <select id="benchActivations" multiple size="6">
+                    <option value="linear">Linear</option>
+                    <option value="relu" selected>ReLU</option>
+                    <option value="leaky_relu" selected>Leaky ReLU</option>
+                    <option value="elu">ELU</option>
+                    <option value="swish">Swish</option>
+                    <option value="gelu">GELU</option>
+                    <option value="tanh">Tanh</option>
+                    <option value="sigmoid">Sigmoid</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <button
+              class="button is-info is-fullwidth is-large"
+              onclick="runBenchmark()"
+              disabled
+              id="benchBtn"
+            >
+              <span class="icon"><i class="fas fa-rocket"></i></span>
+              <span>Start Benchmark</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="column is-8">
+          <div class="box">
+            <div id="benchmarkResults">
+              <h4 class="title is-5">Performance Results</h4>
+              <p class="has-text-grey">
+                Run a benchmark to see CPU vs GPU performance comparisons
+              </p>
+              <div class="notification is-info is-light">
+                <p><strong>About the Benchmark:</strong></p>
+                <ul>
+                  <li>
+                    Tests single forward pass performance on different activation
+                    functions
+                  </li>
+                  <li>Compares CPU vs WebGPU acceleration performance</li>
+                  <li>
+                    Evaluates type-generic network efficiency (Float32, Int32,
+                    Uint32)
+                  </li>
+                  <li>
+                    Results show milliseconds per forward pass and speedup ratios
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Main Content -->
-    <div class="container">
-      <!-- Step 1: Performance Benchmarking -->
-      <section class="demo-section">
-        <div class="content">
-          <h2 class="title is-2">
-            <span class="step-indicator">1</span>
-            Performance Benchmarking
-          </h2>
-          <p class="subtitle">
-            Test CPU vs GPU performance across different network types and
-            activation functions
-          </p>
-        </div>
+    <!-- Step 2: Network Creation and Growth -->
+    <section class="demo-section">
+      <div class="content">
+        <h2 class="title is-2">
+          <span class="step-indicator">2</span>
+          Network Growth Experiment
+        </h2>
+        <p class="subtitle">
+          Create a neural network and watch it evolve through distributed
+          micro-network optimization
+        </p>
+      </div>
 
-        <div class="columns">
-          <div class="column is-4">
-            <div class="box">
-              <h4 class="title is-5">
-                <span class="icon"><i class="fas fa-stopwatch"></i></span>
-                Benchmark Settings
-              </h4>
-
-              <div class="field">
-                <label class="label">Iterations</label>
-                <div class="control">
-                  <input
-                    id="benchIterations"
-                    class="input"
-                    type="number"
-                    value="1000"
-                    min="100"
-                  />
-                </div>
-                <p class="help">Number of forward passes to test</p>
-              </div>
-
-              <div class="field">
-                <label class="label">Network Types</label>
-                <div class="control">
-                  <label class="checkbox">
-                    <input type="checkbox" id="testFloat32" checked />
-                    Float32 (GPU Optimized)
-                  </label>
-                </div>
-                <div class="control">
-                  <label class="checkbox">
-                    <input type="checkbox" id="testInt32" checked />
-                    Int32 (Memory Efficient)
-                  </label>
-                </div>
-                <div class="control">
-                  <label class="checkbox">
-                    <input type="checkbox" id="testUint32" />
-                    Uint32 (Experimental)
-                  </label>
-                </div>
-              </div>
-
-              <div class="field">
-                <label class="label">Activations to Test</label>
-                <div class="control">
-                  <div class="select is-multiple">
-                    <select id="benchActivations" multiple size="6">
-                      <option value="linear" selected>Linear</option>
-                      <option value="relu" selected>ReLU</option>
-                      <option value="leaky_relu" selected>Leaky ReLU</option>
-                      <option value="elu">ELU</option>
-                      <option value="swish">Swish</option>
-                      <option value="gelu">GELU</option>
-                      <option value="tanh" selected>Tanh</option>
-                      <option value="sigmoid">Sigmoid</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-
-              <button
-                class="button is-info is-fullwidth is-large"
-                onclick="runBenchmark()"
-                disabled
-                id="benchBtn"
-              >
-                <span class="icon"><i class="fas fa-rocket"></i></span>
-                <span>Start Benchmark</span>
-              </button>
-            </div>
-          </div>
-
-          <div class="column is-8">
-            <div class="box">
-              <div id="benchmarkResults">
-                <h4 class="title is-5">Performance Results</h4>
-                <p class="has-text-grey">
-                  Run a benchmark to see CPU vs GPU performance comparisons
-                </p>
-                <div class="notification is-info is-light">
-                  <p><strong>About the Benchmark:</strong></p>
-                  <ul>
-                    <li>
-                      Tests forward pass performance on different activation
-                      functions
-                    </li>
-                    <li>Compares CPU vs WebGPU acceleration performance</li>
-                    <li>
-                      Evaluates type-generic network efficiency (Float32, Int32,
-                      Uint32)
-                    </li>
-                    <li>
-                      Results show milliseconds per iteration and speedup ratios
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Step 2: Network Creation and Growth -->
-      <section class="demo-section">
-        <div class="content">
-          <h2 class="title is-2">
-            <span class="step-indicator">2</span>
-            Network Growth Experiment
-          </h2>
-          <p class="subtitle">
-            Create a neural network and watch it evolve through distributed
-            micro-network optimization
-          </p>
-        </div>
-
-        <div class="columns">
-          <div class="column is-4">
-            <div class="box">
-              <h4 class="title is-5">
-                <span class="icon"><i class="fas fa-cogs"></i></span>
-                Network Configuration
-              </h4>
-
-              <div class="field">
-                <label class="label">Layer Architecture (JSON)</label>
-                <div class="control">
-                  <textarea
-                    id="layerSizes"
-                    class="textarea code-input"
-                    rows="4"
-                  >
-[
-  {"Width": 4, "Height": 1},
-  {"Width": 6, "Height": 1},
-  {"Width": 4, "Height": 1}
-]</textarea
-                  >
-                </div>
-                <p class="help">Define the initial network structure</p>
-              </div>
-
-              <div class="field">
-                <label class="label">Activations</label>
-                <div class="control">
-                  <input
-                    id="activations"
-                    class="input"
-                    type="text"
-                    value="linear,relu,softmax"
-                  />
-                </div>
-              </div>
-
-              <div class="field">
-                <label class="label">Connectivity</label>
-                <div class="control">
-                  <input
-                    id="connected"
-                    class="input"
-                    type="text"
-                    value="false,true,true"
-                  />
-                </div>
-              </div>
-
-              <button
-                id="createBtn"
-                class="button is-primary is-fullwidth is-large"
-                onclick="createNetwork()"
-                disabled
-              >
-                <span class="icon"><i class="fas fa-hammer"></i></span>
-                <span>Create Network</span>
-              </button>
-            </div>
-
-            <div class="box">
-              <h4 class="title is-5">
-                <span class="icon"><i class="fas fa-chart-line"></i></span>
-                Training Data
-              </h4>
-
-              <div class="field">
-                <label class="label">Sample Inputs</label>
-                <div class="control">
-                  <textarea id="inputs" class="textarea code-input" rows="3">
-[
-  [[1.0, 0.0, 0.0, 0.0]],
-  [[0.0, 1.0, 0.0, 0.0]],
-  [[0.0, 0.0, 1.0, 0.0]],
-  [[0.0, 0.0, 0.0, 1.0]]
-]</textarea
-                  >
-                </div>
-              </div>
-
-              <div class="field">
-                <label class="label">Expected Labels</label>
-                <div class="control">
-                  <input
-                    id="labels"
-                    class="input"
-                    type="text"
-                    value="0,1,2,3"
-                  />
-                </div>
-              </div>
-            </div>
-
-            <div class="box">
-              <h4 class="title is-5">
-                <span class="icon"><i class="fas fa-sliders-h"></i></span>
-                Growth Parameters
-              </h4>
-
-              <div class="columns is-multiline">
-                <div class="column is-6">
-                  <div class="field">
-                    <label class="label">Checkpoint Layer</label>
-                    <div class="control">
-                      <input
-                        id="checkpointLayer"
-                        class="input"
-                        type="number"
-                        value="1"
-                        min="1"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div class="column is-6">
-                  <div class="field">
-                    <label class="label">Candidates</label>
-                    <div class="control">
-                      <input
-                        id="numCandidates"
-                        class="input"
-                        type="number"
-                        value="25"
-                        min="1"
-                        max="100"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div class="column is-6">
-                  <div class="field">
-                    <label class="label">Epochs</label>
-                    <div class="control">
-                      <input
-                        id="epochs"
-                        class="input"
-                        type="number"
-                        value="5"
-                        min="1"
-                        max="20"
-                      />
-                    </div>
-                  </div>
-                </div>
-                <div class="column is-6">
-                  <div class="field">
-                    <label class="label">Learning Rate</label>
-                    <div class="control">
-                      <input
-                        id="learningRate"
-                        class="input"
-                        type="number"
-                        value="0.05"
-                        step="0.01"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="field">
-                <label class="label">Size Constraints (min,max)</label>
-                <div class="control">
-                  <input
-                    id="sizeConstraints"
-                    class="input"
-                    type="text"
-                    value="2,8"
-                    placeholder="width_min,width_max"
-                  />
-                </div>
-              </div>
-
-              <div class="field">
-                <label class="label">Activation Pool</label>
-                <div class="control">
-                  <input
-                    id="activationPool"
-                    class="input"
-                    type="text"
-                    value="relu,sigmoid,tanh"
-                  />
-                </div>
-              </div>
-
-              <button
-                id="growBtn"
-                class="button is-success is-fullwidth is-large"
-                onclick="runGrowth()"
-                disabled
-              >
-                <span class="icon"><i class="fas fa-seedling"></i></span>
-                <span>Run Growth Experiment</span>
-              </button>
-            </div>
-          </div>
-
-          <div class="column is-8">
-            <div class="box">
-              <div class="buttons has-addons is-centered mb-4">
-                <button
-                  class="button is-warning is-large"
-                  onclick="clearOutput()"
-                >
-                  <span class="icon"><i class="fas fa-eraser"></i></span>
-                  <span>Clear Console</span>
-                </button>
-              </div>
-
-              <div
-                id="progressContainer"
-                class="progress-container"
-                style="display: none"
-              >
-                <div id="progressBar" class="progress-bar">0%</div>
-              </div>
-
-              <div class="output-console" id="output">
-                Waiting for Paragon WASM to load...
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Step 3: Network Visualization and Statistics -->
-      <section class="demo-section">
-        <div class="content">
-          <h2 class="title is-2">
-            <span class="step-indicator">3</span>
-            Network Visualization & Results
-          </h2>
-          <p class="subtitle">
-            View your network architecture and track performance metrics
-          </p>
-        </div>
-
-        <div class="box">
-          <div id="networkViz" class="network-visualization">
-            <h4 class="title is-4 has-text-white">
-              <span class="icon"><i class="fas fa-sitemap"></i></span>
-              Current Network Architecture
+      <div class="columns">
+        <div class="column is-4">
+          <div class="box">
+            <h4 class="title is-5">
+              <span class="icon"><i class="fas fa-cogs"></i></span>
+              Network Configuration
             </h4>
-            <div id="networkDisplay">
-              <p class="has-text-white-ter">
-                Create a network to see its structure
+
+            <div class="field">
+              <label class="label">Layer Architecture (JSON)</label>
+              <div class="control">
+                <textarea
+                  id="layerSizes"
+                  class="textarea code-input"
+                  rows="4"
+                >
+[
+{"Width": 4, "Height": 1},
+{"Width": 6, "Height": 1},
+{"Width": 4, "Height": 1}
+]</textarea
+                >
+              </div>
+              <p class="help">Define the initial network structure</p>
+            </div>
+
+            <div class="field">
+              <label class="label">Activations</label>
+              <div class="control">
+                <input
+                  id="activations"
+                  class="input"
+                  type="text"
+                  value="linear,relu,softmax"
+                />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Connectivity</label>
+              <div class="control">
+                <input
+                  id="connected"
+                  class="input"
+                  type="text"
+                  value="false,true,true"
+                />
+              </div>
+            </div>
+
+            <button
+              id="createBtn"
+              class="button is-primary is-fullwidth is-large"
+              onclick="createNetwork()"
+              disabled
+            >
+              <span class="icon"><i class="fas fa-hammer"></i></span>
+              <span>Create Network</span>
+            </button>
+          </div>
+
+          <div class="box">
+            <h4 class="title is-5">
+              <span class="icon"><i class="fas fa-chart-line"></i></span>
+              Training Data
+            </h4>
+
+            <div class="field">
+              <label class="label">Sample Inputs</label>
+              <div class="control">
+                <textarea id="inputs" class="textarea code-input" rows="3">
+[
+[[1.0, 0.0, 0.0, 0.0]],
+[[0.0, 1.0, 0.0, 0.0]],
+[[0.0, 0.0, 1.0, 0.0]],
+[[0.0, 0.0, 0.0, 1.0]]
+]</textarea
+                >
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Expected Labels</label>
+              <div class="control">
+                <input
+                  id="labels"
+                  class="input"
+                  type="text"
+                  value="0,1,2,3"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="box">
+            <h4 class="title is-5">
+              <span class="icon"><i class="fas fa-sliders-h"></i></span>
+              Growth Parameters
+            </h4>
+
+            <div class="columns is-multiline">
+              <div class="column is-6">
+                <div class="field">
+                  <label class="label">Checkpoint Layer</label>
+                  <div class="control">
+                    <input
+                      id="checkpointLayer"
+                      class="input"
+                      type="number"
+                      value="1"
+                      min="1"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="column is-6">
+                <div class="field">
+                  <label class="label">Candidates</label>
+                  <div class="control">
+                    <input
+                      id="numCandidates"
+                      class="input"
+                      type="number"
+                      value="25"
+                      min="1"
+                      max="100"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="column is-6">
+                <div class="field">
+                  <label class="label">Epochs</label>
+                  <div class="control">
+                    <input
+                      id="epochs"
+                      class="input"
+                      type="number"
+                      value="5"
+                      min="1"
+                      max="20"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="column is-6">
+                <div class="field">
+                  <label class="label">Learning Rate</label>
+                  <div class="control">
+                    <input
+                      id="learningRate"
+                      class="input"
+                      type="number"
+                      value="0.05"
+                      step="0.01"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Size Constraints (min,max)</label>
+              <div class="control">
+                <input
+                  id="sizeConstraints"
+                  class="input"
+                  type="text"
+                  value="2,8"
+                  placeholder="width_min,width_max"
+                />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="label">Activation Pool</label>
+              <div class="control">
+                <input
+                  id="activationPool"
+                  class="input"
+                  type="text"
+                  value="relu,sigmoid,tanh"
+                />
+              </div>
+            </div>
+
+            <button
+              id="growBtn"
+              class="button is-success is-fullwidth is-large"
+              onclick="runGrowth()"
+              disabled
+            >
+              <span class="icon"><i class="fas fa-seedling"></i></span>
+              <span>Run Growth Experiment</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="column is-8">
+          <div class="box">
+            <div class="buttons has-addons is-centered mb-4">
+              <button
+                class="button is-warning is-large"
+                onclick="clearOutput()"
+              >
+                <span class="icon"><i class="fas fa-eraser"></i></span>
+                <span>Clear Console</span>
+              </button>
+            </div>
+
+            <div
+              id="progressContainer"
+              class="progress-container"
+              style="display: none"
+            >
+              <div id="progressBar" class="progress-bar">0%</div>
+            </div>
+
+            <div class="output-console" id="output">
+              Waiting for Paragon WASM to load...
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Step 3: Network Visualization and Statistics -->
+    <section class="demo-section">
+      <div class="content">
+        <h2 class="title is-2">
+          <span class="step-indicator">3</span>
+          Network Visualization & Results
+        </h2>
+        <p class="subtitle">
+          View your network architecture and track performance metrics
+        </p>
+      </div>
+
+      <div class="box">
+        <div id="networkViz" class="network-visualization">
+          <h4 class="title is-4 has-text-white">
+            <span class="icon"><i class="fas fa-sitemap"></i></span>
+            Current Network Architecture
+          </h4>
+          <div id="networkDisplay">
+            <p class="has-text-white-ter">
+              Create a network to see its structure
+            </p>
+          </div>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number" id="statLayers">-</div>
+            <p class="heading">Total Layers</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="statParams">-</div>
+            <p class="heading">Parameters</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="statGrowth">0</div>
+            <p class="heading">Growth Events</p>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="statScore">-</div>
+            <p class="heading">ADHD Score</p>
+          </div>
+        </div>
+
+        <div class="feature-highlight">
+          <h5 class="title is-5 has-text-white">
+            <span class="icon"><i class="fas fa-lightbulb"></i></span>
+            How It Works
+          </h5>
+          <div class="columns">
+            <div class="column">
+              <p>
+                <strong>1. Micro-Network Surgery:</strong> Extract trainable
+                sub-networks from checkpoint layers
+              </p>
+            </div>
+            <div class="column">
+              <p>
+                <strong>2. Distributed Training:</strong> Parallel
+                optimization across multiple worker threads
+              </p>
+            </div>
+            <div class="column">
+              <p>
+                <strong>3. ADHD Evaluation:</strong> Performance scoring using
+                Accuracy Deviation Heatmap Distribution
+              </p>
+            </div>
+            <div class="column">
+              <p>
+                <strong>4. Network Evolution:</strong> Reintegrate improved
+                architectures back into the main network
               </p>
             </div>
           </div>
-
-          <div class="stats-grid">
-            <div class="stat-card">
-              <div class="stat-number" id="statLayers">-</div>
-              <p class="heading">Total Layers</p>
-            </div>
-            <div class="stat-card">
-              <div class="stat-number" id="statParams">-</div>
-              <p class="heading">Parameters</p>
-            </div>
-            <div class="stat-card">
-              <div class="stat-number" id="statGrowth">0</div>
-              <p class="heading">Growth Events</p>
-            </div>
-            <div class="stat-card">
-              <div class="stat-number" id="statScore">-</div>
-              <p class="heading">ADHD Score</p>
-            </div>
-          </div>
-
-          <div class="feature-highlight">
-            <h5 class="title is-5 has-text-white">
-              <span class="icon"><i class="fas fa-lightbulb"></i></span>
-              How It Works
-            </h5>
-            <div class="columns">
-              <div class="column">
-                <p>
-                  <strong>1. Micro-Network Surgery:</strong> Extract trainable
-                  sub-networks from checkpoint layers
-                </p>
-              </div>
-              <div class="column">
-                <p>
-                  <strong>2. Distributed Training:</strong> Parallel
-                  optimization across multiple worker threads
-                </p>
-              </div>
-              <div class="column">
-                <p>
-                  <strong>3. ADHD Evaluation:</strong> Performance scoring using
-                  Accuracy Deviation Heatmap Distribution
-                </p>
-              </div>
-              <div class="column">
-                <p>
-                  <strong>4. Network Evolution:</strong> Reintegrate improved
-                  architectures back into the main network
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
+  </div>
 
-    <!-- Floating Action Button -->
-    <div class="floating-action">
-      <button
-        class="button is-primary is-large is-rounded"
-        onclick="downloadResults()"
-        title="Download Results"
-      >
-        <span class="icon is-large">
-          <i class="fas fa-download"></i>
-        </span>
-      </button>
-    </div>
+  <!-- Floating Action Button -->
+  <div class="floating-action">
+    <button
+      class="button is-primary is-large is-rounded"
+      onclick="downloadResults()"
+      title="Download Results"
+    >
+      <span class="icon is-large">
+        <i class="fas fa-download"></i>
+      </span>
+    </button>
+  </div>
 
-    <script>
-      let go = null;
-      let wasmLoaded = false;
-      let currentNetwork = null;
-      let benchmarkResults = [];
-      let growthEvents = 0;
+  <script>
+    let go = null;
+    let wasmLoaded = false;
+    let currentNetwork = null;
+    let benchmarkResults = [];
+    let growthEvents = 0;
 
-      // Initialize when DOM is ready
-      document.addEventListener("DOMContentLoaded", function () {
-        console.log("DOM loaded, initializing...");
-        loadParagonWASM();
-      });
+    // CRITICAL FIX: Pre-initialize WebGPU before loading WASM - copied from working index.html
+    async function setupWebGPU() {
+      try {
+        if (!navigator.gpu) {
+          throw new Error("WebGPU not supported in this browser");
+        }
 
-      async function loadParagonWASM() {
-        console.log("Starting WASM load...");
-        updateStatus("Loading Paragon WASM engine...", "loading");
+        const adapter = await navigator.gpu.requestAdapter();
+        if (!adapter) {
+          throw new Error("No WebGPU adapter found");
+        }
 
-        try {
-          // Initialize Go runtime
-          if (typeof Go === "undefined") {
-            throw new Error(
-              "Go WASM runtime not available. Make sure wasm_exec.js is loaded."
-            );
-          }
+        const device = await adapter.requestDevice();
+        
+        // Set global WebGPU objects for WASM to access
+        window.webgpuAdapter = adapter;
+        window.webgpuDevice = device;
+        window.webgpuQueue = device.queue;
 
-          go = new Go();
-          console.log("Go runtime initialized");
+        console.log("✅ WebGPU pre-initialized successfully");
+        return true;
+      } catch (error) {
+        console.warn("⚠️ WebGPU setup failed:", error);
+        return false;
+      }
+    }
 
-          // Load WASM from static directory
-          updateStatus("Loading Paragon WASM from static files...", "loading");
+    // Initialize when DOM is ready
+    document.addEventListener("DOMContentLoaded", function () {
+      console.log("DOM loaded, initializing...");
+      loadParagonWASM();
+    });
 
-          const response = await fetch("/static/paragon.wasm");
-          if (!response.ok) {
-            throw new Error(
-              `Failed to fetch WASM: ${response.status} ${response.statusText}`
-            );
-          }
+    async function loadParagonWASM() {
+      console.log("Starting WASM load...");
+      updateStatus("Setting up WebGPU...", "loading");
 
-          console.log("WASM file fetched, instantiating...");
-          const wasmModule = await WebAssembly.instantiate(
-            await response.arrayBuffer(),
-            go.importObject
+      // STEP 1: Setup WebGPU FIRST (copied from working index.html)
+      const webgpuReady = await setupWebGPU();
+      if (webgpuReady) {
+        updateStatus("WebGPU ready! Loading Paragon WASM engine...", "loading");
+      } else {
+        updateStatus("WebGPU not available, loading WASM (CPU only)...", "loading");
+      }
+
+      try {
+        // Initialize Go runtime
+        if (typeof Go === "undefined") {
+          throw new Error(
+            "Go WASM runtime not available. Make sure wasm_exec.js is loaded."
           );
+        }
 
-          updateStatus("Starting Paragon engine...", "loading");
-          console.log("Running Go WASM...");
-          go.run(wasmModule.instance);
+        go = new Go();
+        console.log("Go runtime initialized");
 
-          wasmLoaded = true;
-          updateStatus(
-            "Paragon WASM loaded successfully! Ready to run benchmarks and create networks.",
-            "success"
+        // Load WASM from static directory
+        updateStatus("Loading Paragon WASM from static files...", "loading");
+
+        const response = await fetch("/static/paragon.wasm");
+        if (!response.ok) {
+          throw new Error(
+            `Failed to fetch WASM: ${response.status} ${response.statusText}`
           );
+        }
 
-          // Enable buttons
-          const createBtn = document.getElementById("createBtn");
-          const benchBtn = document.getElementById("benchBtn");
+        console.log("WASM file fetched, instantiating...");
+        const wasmModule = await WebAssembly.instantiate(
+          await response.arrayBuffer(),
+          go.importObject
+        );
 
-          if (createBtn) createBtn.disabled = false;
-          if (benchBtn) benchBtn.disabled = false;
+        updateStatus("Starting Paragon engine...", "loading");
+        console.log("Running Go WASM...");
+        go.run(wasmModule.instance);
 
-          console.log("WASM loaded successfully, buttons enabled");
-        } catch (error) {
-          console.error("WASM loading error:", error);
+        // Bind factories to window if not already exposed (copied from working index.html)
+        window.NewNetworkFloat32 = NewNetworkFloat32;
+        window.NewNetworkInt32 = NewNetworkInt32;
+        window.NewNetworkUint32 = NewNetworkUint32;
 
-          let errorMessage = "Failed to load Paragon WASM. ";
+        wasmLoaded = true;
+        updateStatus(
+          `Paragon WASM loaded successfully! ${webgpuReady ? "WebGPU acceleration enabled." : "CPU mode only."} Ready to run benchmarks and create networks.`,
+          "success"
+        );
 
-          if (
-            error.message.includes("fetch") ||
-            error.message.includes("404")
-          ) {
-            errorMessage +=
-              "Could not find '/static/paragon.wasm'. Make sure the file exists on the server.";
-          } else if (error.message.includes("CORS")) {
-            errorMessage +=
-              "CORS error - make sure you're serving from the correct domain.";
-          } else if (error.message.includes("TypeError")) {
-            errorMessage +=
-              "WASM instantiation failed. Check if the file is valid.";
-          } else {
-            errorMessage += `Error: ${error.message}`;
-          }
+        // Enable buttons
+        const createBtn = document.getElementById("createBtn");
+        const benchBtn = document.getElementById("benchBtn");
 
-          updateStatus(errorMessage, "error");
+        if (createBtn) createBtn.disabled = false;
+        if (benchBtn) benchBtn.disabled = false;
 
-          // Show helpful instructions in console
-          const output = document.getElementById("output");
-          if (output) {
-            output.textContent = `
+        console.log("WASM loaded successfully, buttons enabled");
+      } catch (error) {
+        console.error("WASM loading error:", error);
+
+        let errorMessage = "Failed to load Paragon WASM. ";
+
+        if (
+          error.message.includes("fetch") ||
+          error.message.includes("404")
+        ) {
+          errorMessage +=
+            "Could not find 'paragon.wasm'. Make sure the file exists in the static directory.";
+        } else if (error.message.includes("CORS")) {
+          errorMessage +=
+            "CORS error - make sure you're serving from the correct domain.";
+        } else if (error.message.includes("TypeError")) {
+          errorMessage +=
+            "WASM instantiation failed. Check if the file is valid.";
+        } else {
+          errorMessage += `Error: ${error.message}`;
+        }
+
+        updateStatus(errorMessage, "error");
+
+        // Show helpful instructions in console
+        const output = document.getElementById("output");
+        if (output) {
+          output.textContent = `
 🔧 WASM Loading Failed
 
 Error: ${error.message}
 
 Expected files:
-- /static/paragon.wasm (15MB WebAssembly file)
+- /static/paragon.wasm (WebAssembly file)
 - /static/wasm_exec.js (Go WebAssembly support)
 
-Make sure both files are available in your /static/ directory and the web server is running properly.
+Make sure both files are available and the web server is running properly.
+    `;
+        }
+      }
+    }
+
+    function updateStatus(message, type) {
+      console.log("Status update:", type, message);
+      const status = document.getElementById("wasmStatus");
+      if (!status) {
+        console.error("Status element not found");
+        return;
+      }
+
+      status.className = `notification status-card status-${type}`;
+
+      let icon = "fa-info-circle";
+      if (type === "loading") icon = "fa-spinner fa-spin";
+      else if (type === "success") icon = "fa-check-circle";
+      else if (type === "error") icon = "fa-exclamation-circle";
+
+      status.innerHTML = `
+  <span class="icon"><i class="fas ${icon}"></i></span>
+  <span>${message}</span>
+`;
+    }
+
+    function updateProgress(percent) {
+      const container = document.getElementById("progressContainer");
+      const bar = document.getElementById("progressBar");
+
+      if (!container || !bar) return;
+
+      if (percent > 0) {
+        container.style.display = "block";
+        bar.style.width = percent + "%";
+        bar.textContent = Math.round(percent) + "%";
+      } else {
+        container.style.display = "none";
+      }
+    }
+
+    function log(message) {
+      console.log("Log:", message);
+      const output = document.getElementById("output");
+      if (output) {
+        output.textContent += message + "\n";
+        output.scrollTop = output.scrollHeight;
+      }
+    }
+
+    function clearOutput() {
+      console.log("Clearing output");
+      const output = document.getElementById("output");
+      if (output) {
+        output.textContent = "";
+      }
+    }
+
+    function parseArray(str) {
+      try {
+        return JSON.parse(str);
+      } catch (e) {
+        return str.split(",").map((s) => {
+          const trimmed = s.trim();
+          return trimmed === "true"
+            ? true
+            : trimmed === "false"
+            ? false
+            : isNaN(trimmed)
+            ? trimmed
+            : Number(trimmed);
+        });
+      }
+    }
+
+    function visualizeNetwork(network) {
+      const display = document.getElementById("networkDisplay");
+      if (!display) return;
+
+      if (!network || !network.Layers) {
+        display.innerHTML =
+          '<p class="has-text-white-ter">No network structure available</p>';
+        return;
+      }
+
+      let html = "";
+      for (let i = 0; i < network.Layers.length; i++) {
+        const layer = network.Layers[i];
+        const activation =
+          layer.Neurons && layer.Neurons[0] && layer.Neurons[0][0]
+            ? layer.Neurons[0][0].Activation
+            : "linear";
+
+        html += `<div class="layer-node">
+    <strong>Layer ${i}</strong><br>
+    ${layer.Width}×${layer.Height}<br>
+    <small>${activation}</small>
+  </div>`;
+
+        if (i < network.Layers.length - 1) {
+          html += '<span class="layer-arrow">→</span>';
+        }
+      }
+
+      display.innerHTML = html;
+
+      // Update stats
+      const statLayers = document.getElementById("statLayers");
+      const statParams = document.getElementById("statParams");
+
+      if (statLayers) statLayers.textContent = network.Layers.length;
+
+      // Calculate approximate parameters
+      let params = 0;
+      for (let i = 1; i < network.Layers.length; i++) {
+        const prev = network.Layers[i - 1];
+        const curr = network.Layers[i];
+        params +=
+          prev.Width * prev.Height * curr.Width * curr.Height +
+          curr.Width * curr.Height;
+      }
+      if (statParams) statParams.textContent = params.toLocaleString();
+    }
+
+    // Global button functions - EXACT COPY from working index.html
+    window.runBenchmark = async function () {
+      console.log("Run benchmark clicked");
+
+      if (!wasmLoaded) {
+        updateStatus("WASM not loaded yet!", "error");
+        return;
+      }
+
+      const testFloat32El = document.getElementById("testFloat32");
+      const testInt32El = document.getElementById("testInt32");
+      const testUint32El = document.getElementById("testUint32");
+      const benchActivationsEl = document.getElementById("benchActivations");
+
+      if (
+        !testFloat32El ||
+        !testInt32El ||
+        !testUint32El ||
+        !benchActivationsEl
+      ) {
+        updateStatus("Benchmark form elements not found", "error");
+        return;
+      }
+
+      const testFloat32 = testFloat32El.checked;
+      const testInt32 = testInt32El.checked;
+      const testUint32 = testUint32El.checked;
+
+      const selectedActivations = Array.from(
+        benchActivationsEl.selectedOptions
+      ).map((option) => option.value);
+
+      if (selectedActivations.length === 0) {
+        updateStatus(
+          "Please select at least one activation function",
+          "error"
+        );
+        return;
+      }
+
+      const types = [];
+      if (testFloat32)
+        types.push({ label: "float32", factory: "NewNetworkFloat32" });
+      if (testInt32)
+        types.push({ label: "int32", factory: "NewNetworkInt32" });
+      if (testUint32)
+        types.push({ label: "uint32", factory: "NewNetworkUint32" });
+
+      if (types.length === 0) {
+        updateStatus("Please select at least one network type", "error");
+        return;
+      }
+
+      updateStatus("Running performance benchmark...", "loading");
+      benchmarkResults = [];
+
+      // EXACT SAME configuration from working index.html
+      const layerSizes = JSON.stringify([
+        { Width: 32, Height: 32 },
+        { Width: 16, Height: 32 },
+        { Width: 16, Height: 16 },
+        { Width: 32, Height: 32 },
+        { Width: 8, Height: 8 },
+        { Width: 1, Height: 10 },
+      ]);
+
+      const fullConnect = JSON.stringify([
+        true,
+        true,
+        true,
+        true,
+        true,
+        true,
+      ]);
+
+      const input = JSON.stringify([
+        Array.from({ length: 1024 }, () => Math.random()),
+      ]);
+
+      let resultsHtml = `
+  <h4 class="title is-5">Performance Benchmark Results</h4>
+  <div class="table-container">
+    <table class="table is-fullwidth is-striped">
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Activation</th>
+          <th>CPU (ms)</th>
+          <th>GPU (ms)</th>
+          <th>Speedup</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+`;
+
+      const tolerance = 1e-5;
+
+      for (const { label, factory } of types) {
+        for (const activation of selectedActivations) {
+          try {
+            // EXACT SAME activation pattern as working index.html  
+            const activations = JSON.stringify([
+              activation,
+              activation,
+              activation,
+              activation,
+              activation,
+              "softmax",
+            ]);
+
+            // Check if factory function exists
+            if (!window[factory]) {
+              throw new Error(`Factory function ${factory} not available`);
+            }
+
+            const net = window[factory](layerSizes, activations, fullConnect);
+
+            // CPU run - EXACT COPY from working index.html (single pass, not loops!)
+            const cpuStart = performance.now();
+            net.Forward(input);
+            const cpuOut = JSON.parse(net.GetOutput("[]"));
+            const cpuEnd = performance.now();
+            const cpuTime = (cpuEnd - cpuStart).toFixed(2);
+
+            // GPU run - EXACT COPY from working index.html  
+            net.WebGPUNative = true;
+            const init = net.InitializeOptimizedGPU();
+            const gpuStart = performance.now();
+            net.Forward(input);
+            const gpuOut = JSON.parse(net.GetOutput("[]"));
+            const gpuEnd = performance.now();
+            const gpuTime = (gpuEnd - gpuStart).toFixed(2);
+
+            // Check if results match - EXACT COPY from working index.html
+            let match = true;
+            for (let i = 0; i < cpuOut[0].length; i++) {
+              if (Math.abs(cpuOut[0][i] - gpuOut[0][i]) > tolerance) {
+                match = false;
+                break;
+              }
+            }
+
+            const speedup = (cpuTime / gpuTime).toFixed(2);
+            const status = match ? "✅ Success" : "❌ Mismatch";
+
+            const result = {
+              type: label,
+              activation: activation,
+              cpuTime: cpuTime,
+              gpuTime: gpuTime,
+              speedup: speedup + "x",
+              status: status,
+            };
+
+            benchmarkResults.push(result);
+
+            const rowClass = status.includes("Success")
+              ? "has-background-success-light"
+              : status.includes("Mismatch")
+              ? "has-background-warning-light"
+              : "";
+
+            resultsHtml += `
+        <tr class="${rowClass}">
+          <td><strong>${result.type}</strong></td>
+          <td>${result.activation}</td>
+          <td>${result.cpuTime}</td>
+          <td>${result.gpuTime}</td>
+          <td><strong>${result.speedup}</strong></td>
+          <td>${result.status}</td>
+        </tr>
+      `;
+          } catch (e) {
+            console.error(`Benchmark failed for ${label}/${activation}:`, e);
+            resultsHtml += `
+        <tr class="has-background-danger-light">
+          <td><strong>${label}</strong></td>
+          <td>${activation}</td>
+          <td colspan="4">❌ Error: ${e.message}</td>
+        </tr>
       `;
           }
         }
       }
 
-      function updateStatus(message, type) {
-        console.log("Status update:", type, message);
-        const status = document.getElementById("wasmStatus");
-        if (!status) {
-          console.error("Status element not found");
-          return;
-        }
+      resultsHtml += `
+      </tbody>
+    </table>
+  </div>
+  <div class="notification is-success is-light mt-4">
+    <p><strong>🎉 Benchmark completed!</strong></p>
+    <p>• Single forward pass timing (like working index.html)</p>
+    <p>• Results show CPU vs GPU performance comparison</p>
+    <p>• Speedup indicates how much faster GPU is than CPU</p>
+    <p>• <strong>Next step:</strong> Scroll down to create and evolve a neural network!</p>
+  </div>
+`;
 
-        status.className = `notification status-card status-${type}`;
+      const benchmarkResultsEl = document.getElementById("benchmarkResults");
+      if (benchmarkResultsEl) {
+        benchmarkResultsEl.innerHTML = resultsHtml;
+      }
+      updateStatus(
+        "Benchmark completed successfully! Now try creating a network below.",
+        "success"
+      );
+    };
 
-        let icon = "fa-info-circle";
-        if (type === "loading") icon = "fa-spinner fa-spin";
-        else if (type === "success") icon = "fa-check-circle";
-        else if (type === "error") icon = "fa-exclamation-circle";
+    window.createNetwork = function () {
+      console.log("Create network clicked, WASM loaded:", wasmLoaded);
 
-        status.innerHTML = `
-    <span class="icon"><i class="fas ${icon}"></i></span>
-    <span>${message}</span>
-  `;
+      if (!wasmLoaded) {
+        updateStatus("WASM not loaded yet!", "error");
+        return;
       }
 
-      function updateProgress(percent) {
-        const container = document.getElementById("progressContainer");
-        const bar = document.getElementById("progressBar");
+      try {
+        log("🏗️ Creating new network...");
 
-        if (!container || !bar) return;
+        const layerSizesEl = document.getElementById("layerSizes");
+        const activationsEl = document.getElementById("activations");
+        const connectedEl = document.getElementById("connected");
 
-        if (percent > 0) {
-          container.style.display = "block";
-          bar.style.width = percent + "%";
-          bar.textContent = Math.round(percent) + "%";
+        if (!layerSizesEl || !activationsEl || !connectedEl) {
+          throw new Error("Input elements not found");
+        }
+
+        const layerSizes = JSON.parse(layerSizesEl.value);
+        const activations = parseArray(activationsEl.value);
+        const connected = parseArray(connectedEl.value);
+
+        log(`Layer sizes: ${JSON.stringify(layerSizes)}`);
+        log(`Activations: ${JSON.stringify(activations)}`);
+        log(`Connected: ${JSON.stringify(connected)}`);
+
+        // Check if WASM function exists
+        if (!window.NewNetworkFloat32) {
+          throw new Error(
+            "NewNetworkFloat32 function not available from WASM"
+          );
+        }
+
+        currentNetwork = window.NewNetworkFloat32(
+          JSON.stringify(layerSizes),
+          JSON.stringify(activations),
+          JSON.stringify(connected)
+        );
+
+        if (currentNetwork) {
+          log("✅ Network created successfully!");
+
+          // Build structure for visualization
+          const networkStructure = {
+            Layers: layerSizes.map((size, i) => ({
+              Width: size.Width,
+              Height: size.Height,
+              Neurons: [[{ Activation: activations[i] || "linear" }]],
+            })),
+          };
+
+          visualizeNetwork(networkStructure);
+
+          const growBtn = document.getElementById("growBtn");
+          if (growBtn) growBtn.disabled = false;
+
+          updateStatus(
+            "Network created! Now you can run the growth experiment.",
+            "success"
+          );
+          log("✅ Network is ready for growth experiments!");
         } else {
-          container.style.display = "none";
+          throw new Error("Network creation returned null");
         }
+      } catch (e) {
+        console.error("Network creation error:", e);
+        log(`❌ Error creating network: ${e.message}`);
+        updateStatus("Network creation failed!", "error");
+      }
+    };
+
+    window.runGrowth = async function () {
+      console.log("Run growth clicked");
+
+      if (!currentNetwork) {
+        log("❌ No network created yet! Please create a network first.");
+        updateStatus("Please create a network first!", "error");
+        return;
       }
 
-      function log(message) {
-        console.log("Log:", message);
-        const output = document.getElementById("output");
-        if (output) {
-          output.textContent += message + "\n";
-          output.scrollTop = output.scrollHeight;
-        }
-      }
+      try {
+        log("\n🚀 Starting network growth experiment...");
+        log("This demonstrates distributed micro-network optimization!");
+        updateProgress(10);
 
-      function clearOutput() {
-        console.log("Clearing output");
-        const output = document.getElementById("output");
-        if (output) {
-          output.textContent = "";
-        }
-      }
-
-      function parseArray(str) {
-        try {
-          return JSON.parse(str);
-        } catch (e) {
-          return str.split(",").map((s) => {
-            const trimmed = s.trim();
-            return trimmed === "true"
-              ? true
-              : trimmed === "false"
-              ? false
-              : isNaN(trimmed)
-              ? trimmed
-              : Number(trimmed);
-          });
-        }
-      }
-
-      function visualizeNetwork(network) {
-        const display = document.getElementById("networkDisplay");
-        if (!display) return;
-
-        if (!network || !network.Layers) {
-          display.innerHTML =
-            '<p class="has-text-white-ter">No network structure available</p>';
-          return;
-        }
-
-        let html = "";
-        for (let i = 0; i < network.Layers.length; i++) {
-          const layer = network.Layers[i];
-          const activation =
-            layer.Neurons && layer.Neurons[0] && layer.Neurons[0][0]
-              ? layer.Neurons[0][0].Activation
-              : "linear";
-
-          html += `<div class="layer-node">
-      <strong>Layer ${i}</strong><br>
-      ${layer.Width}×${layer.Height}<br>
-      <small>${activation}</small>
-    </div>`;
-
-          if (i < network.Layers.length - 1) {
-            html += '<span class="layer-arrow">→</span>';
-          }
-        }
-
-        display.innerHTML = html;
-
-        // Update stats
-        const statLayers = document.getElementById("statLayers");
-        const statParams = document.getElementById("statParams");
-
-        if (statLayers) statLayers.textContent = network.Layers.length;
-
-        // Calculate approximate parameters
-        let params = 0;
-        for (let i = 1; i < network.Layers.length; i++) {
-          const prev = network.Layers[i - 1];
-          const curr = network.Layers[i];
-          params +=
-            prev.Width * prev.Height * curr.Width * curr.Height +
-            curr.Width * curr.Height;
-        }
-        if (statParams) statParams.textContent = params.toLocaleString();
-      }
-
-      // Global button functions
-      window.runBenchmark = async function () {
-        console.log("Run benchmark clicked");
-
-        if (!wasmLoaded) {
-          updateStatus("WASM not loaded yet!", "error");
-          return;
-        }
-
-        const iterationsEl = document.getElementById("benchIterations");
-        const testFloat32El = document.getElementById("testFloat32");
-        const testInt32El = document.getElementById("testInt32");
-        const testUint32El = document.getElementById("testUint32");
-        const benchActivationsEl = document.getElementById("benchActivations");
+        const checkpointLayerEl = document.getElementById("checkpointLayer");
+        const numCandidatesEl = document.getElementById("numCandidates");
+        const epochsEl = document.getElementById("epochs");
+        const learningRateEl = document.getElementById("learningRate");
+        const inputsEl = document.getElementById("inputs");
+        const labelsEl = document.getElementById("labels");
+        const sizeConstraintsEl = document.getElementById("sizeConstraints");
+        const activationPoolEl = document.getElementById("activationPool");
 
         if (
-          !iterationsEl ||
-          !testFloat32El ||
-          !testInt32El ||
-          !testUint32El ||
-          !benchActivationsEl
+          !checkpointLayerEl ||
+          !numCandidatesEl ||
+          !epochsEl ||
+          !learningRateEl ||
+          !inputsEl ||
+          !labelsEl ||
+          !sizeConstraintsEl ||
+          !activationPoolEl
         ) {
-          updateStatus("Benchmark form elements not found", "error");
-          return;
+          throw new Error("Required input elements not found");
         }
 
-        const iterations = parseInt(iterationsEl.value);
-        const testFloat32 = testFloat32El.checked;
-        const testInt32 = testInt32El.checked;
-        const testUint32 = testUint32El.checked;
+        const checkpointLayer = parseInt(checkpointLayerEl.value);
+        const numCandidates = parseInt(numCandidatesEl.value);
+        const epochs = parseInt(epochsEl.value);
+        const learningRate = parseFloat(learningRateEl.value);
+        const tolerance = 1e-6;
 
-        const selectedActivations = Array.from(
-          benchActivationsEl.selectedOptions
-        ).map((option) => option.value);
+        const inputs = JSON.parse(inputsEl.value);
+        const labels = parseArray(labelsEl.value);
 
-        if (selectedActivations.length === 0) {
+        const [minSize, maxSize] = parseArray(sizeConstraintsEl.value);
+        const activationPool = parseArray(activationPoolEl.value);
+
+        log(`📊 Growth Parameters:`);
+        log(`  • Checkpoint Layer: ${checkpointLayer}`);
+        log(`  • Candidates: ${numCandidates}`);
+        log(`  • Epochs: ${epochs}`);
+        log(`  • Learning Rate: ${learningRate}`);
+        log(`  • Size Range: ${minSize}-${maxSize}`);
+        log(`  • Activation Pool: ${activationPool.join(", ")}`);
+        updateProgress(25);
+
+        // Get initial performance
+        log("\n📈 Evaluating initial network performance...");
+        const initialPredictions = [];
+        for (let i = 0; i < inputs.length; i++) {
+          currentNetwork.Forward(JSON.stringify(inputs[i]));
+          const output = JSON.parse(currentNetwork.GetOutput("[]"));
+          const prediction =
+            output.length > 0 ? output.indexOf(Math.max(...output)) : 0;
+          initialPredictions.push(prediction);
+        }
+
+        const initialScore = calculateAccuracy(initialPredictions, labels);
+        log(`📊 Initial accuracy: ${(initialScore * 100).toFixed(2)}%`);
+        updateProgress(50);
+
+        // Run growth algorithm
+        log("\n🌱 Running distributed growth algorithm...");
+        log("⚡ Extracting micro-networks and optimizing in parallel...");
+
+        if (!currentNetwork.Grow) {
+          throw new Error("Grow function not available on network object");
+        }
+
+        const improved = currentNetwork.Grow(
+          checkpointLayer,
+          JSON.stringify(inputs),
+          JSON.stringify(labels),
+          numCandidates,
+          epochs,
+          learningRate,
+          tolerance,
+          1.0,
+          -1.0,
+          minSize,
+          maxSize,
+          minSize,
+          maxSize,
+          JSON.stringify(activationPool),
+          4
+        );
+
+        updateProgress(90);
+
+        // Get final performance
+        log("\n📈 Evaluating final network performance...");
+        const finalPredictions = [];
+        for (let i = 0; i < inputs.length; i++) {
+          currentNetwork.Forward(JSON.stringify(inputs[i]));
+          const output = JSON.parse(currentNetwork.GetOutput("[]"));
+          const prediction =
+            output.length > 0 ? output.indexOf(Math.max(...output)) : 0;
+          finalPredictions.push(prediction);
+        }
+
+        const finalScore = calculateAccuracy(finalPredictions, labels);
+        const improvement = finalScore - initialScore;
+
+        log(`📊 Final accuracy: ${(finalScore * 100).toFixed(2)}%`);
+        log(
+          `📈 Improvement: ${improvement >= 0 ? "+" : ""}${(
+            improvement * 100
+          ).toFixed(2)}%`
+        );
+
+        updateProgress(100);
+
+        if (improved) {
+          growthEvents++;
+          const statGrowth = document.getElementById("statGrowth");
+          if (statGrowth) statGrowth.textContent = growthEvents;
+          log("\n🎉 SUCCESS: Network was improved by growth!");
+          log("🔬 The micro-network surgery and reintegration worked!");
           updateStatus(
-            "Please select at least one activation function",
-            "error"
+            "Growth experiment completed successfully!",
+            "success"
           );
-          return;
-        }
-
-        const types = [];
-        if (testFloat32)
-          types.push({ label: "float32", factory: "NewNetworkFloat32" });
-        if (testInt32)
-          types.push({ label: "int32", factory: "NewNetworkInt32" });
-        if (testUint32)
-          types.push({ label: "uint32", factory: "NewNetworkUint32" });
-
-        if (types.length === 0) {
-          updateStatus("Please select at least one network type", "error");
-          return;
-        }
-
-        updateStatus("Running performance benchmark...", "loading");
-        benchmarkResults = [];
-
-        // FIXED: Consistent layer configuration
-        const layerSizes = JSON.stringify([
-          { Width: 28, Height: 28 },
-          { Width: 32, Height: 1 },
-          { Width: 10, Height: 1 },
-        ]);
-        const fc = JSON.stringify([false, true, true]); // 3 connectivity values for 3 layers
-        const testInput = JSON.stringify([
-          Array.from({ length: 28 * 28 }, () => Math.random()),
-        ]);
-
-        let resultsHtml = `
-    <h4 class="title is-5">Performance Benchmark Results</h4>
-    <div class="table-container">
-      <table class="table is-fullwidth is-striped">
-        <thead>
-          <tr>
-            <th>Type</th>
-            <th>Activation</th>
-            <th>CPU (ms)</th>
-            <th>GPU (ms)</th>
-            <th>Speedup</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-  `;
-
-        for (const { label, factory } of types) {
-          for (const activation of selectedActivations) {
-            try {
-              // FIXED: Consistent activation array - 3 activations for 3 layers
-              const acts = JSON.stringify(["linear", activation, "softmax"]);
-
-              // Check if factory function exists
-              if (!window[factory]) {
-                throw new Error(`Factory function ${factory} not available`);
-              }
-
-              const net = window[factory](layerSizes, acts, fc);
-
-              // CPU Benchmark
-              const t0 = performance.now();
-              for (let i = 0; i < iterations; i++) {
-                net.Forward(testInput);
-              }
-              const t1 = performance.now();
-              const cpuTime = t1 - t0;
-
-              // GPU Benchmark
-              let gpuTime = 0;
-              let speedup = "N/A";
-              let status = "❌ GPU Failed";
-
-              try {
-                const initResult = net.InitializeOptimizedGPU
-                  ? net.InitializeOptimizedGPU(JSON.stringify([label]))
-                  : "Failed";
-                if (!initResult || !initResult.startsWith("Failed")) {
-                  if (net.Forward) {
-                    net.Forward(testInput); // warmup
-
-                    const t2 = performance.now();
-                    for (let i = 0; i < iterations; i++) {
-                      net.Forward(testInput);
-                    }
-                    const t3 = performance.now();
-                    gpuTime = t3 - t2;
-
-                    if (gpuTime > 0) {
-                      speedup = (cpuTime / gpuTime).toFixed(2) + "x";
-                      status = "✅ Success";
-                    }
-
-                    if (net.CleanupOptimizedGPU) {
-                      net.CleanupOptimizedGPU();
-                    }
-                  } else {
-                    status = "⚠️ Forward method unavailable";
-                  }
-                } else {
-                  status = "⚠️ GPU Unavailable";
-                }
-              } catch (e) {
-                console.warn(
-                  `GPU benchmark failed for ${label}/${activation}:`,
-                  e
-                );
-                status = "❌ GPU Error";
-              }
-
-              const result = {
-                type: label,
-                activation: activation,
-                cpuTime: cpuTime.toFixed(2),
-                gpuTime: gpuTime > 0 ? gpuTime.toFixed(2) : "N/A",
-                speedup: speedup,
-                status: status,
-              };
-
-              benchmarkResults.push(result);
-
-              const rowClass = status.includes("Success")
-                ? "has-background-success-light"
-                : status.includes("Unavailable")
-                ? "has-background-warning-light"
-                : "";
-
-              resultsHtml += `
-          <tr class="${rowClass}">
-            <td><strong>${result.type}</strong></td>
-            <td>${result.activation}</td>
-            <td>${result.cpuTime}</td>
-            <td>${result.gpuTime}</td>
-            <td><strong>${result.speedup}</strong></td>
-            <td>${result.status}</td>
-          </tr>
-        `;
-            } catch (e) {
-              console.error(`Benchmark failed for ${label}/${activation}:`, e);
-              resultsHtml += `
-          <tr class="has-background-danger-light">
-            <td><strong>${label}</strong></td>
-            <td>${activation}</td>
-            <td colspan="4">❌ Error: ${e.message}</td>
-          </tr>
-        `;
-            }
-          }
-        }
-
-        resultsHtml += `
-        </tbody>
-      </table>
-    </div>
-    <div class="notification is-success is-light mt-4">
-      <p><strong>🎉 Benchmark completed!</strong></p>
-      <p>• Tested ${iterations.toLocaleString()} iterations per configuration</p>
-      <p>• Results show CPU vs GPU performance comparison</p>
-      <p>• Speedup indicates how much faster GPU is than CPU</p>
-      <p>• <strong>Next step:</strong> Scroll down to create and evolve a neural network!</p>
-    </div>
-  `;
-
-        const benchmarkResultsEl = document.getElementById("benchmarkResults");
-        if (benchmarkResultsEl) {
-          benchmarkResultsEl.innerHTML = resultsHtml;
-        }
-        updateStatus(
-          "Benchmark completed successfully! Now try creating a network below.",
-          "success"
-        );
-      };
-
-      window.createNetwork = function () {
-        console.log("Create network clicked, WASM loaded:", wasmLoaded);
-
-        if (!wasmLoaded) {
-          updateStatus("WASM not loaded yet!", "error");
-          return;
-        }
-
-        try {
-          log("🏗️ Creating new network...");
-
-          const layerSizesEl = document.getElementById("layerSizes");
-          const activationsEl = document.getElementById("activations");
-          const connectedEl = document.getElementById("connected");
-
-          if (!layerSizesEl || !activationsEl || !connectedEl) {
-            throw new Error("Input elements not found");
-          }
-
-          const layerSizes = JSON.parse(layerSizesEl.value);
-          const activations = parseArray(activationsEl.value);
-          const connected = parseArray(connectedEl.value);
-
-          log(`Layer sizes: ${JSON.stringify(layerSizes)}`);
-          log(`Activations: ${JSON.stringify(activations)}`);
-          log(`Connected: ${JSON.stringify(connected)}`);
-
-          // Check if WASM function exists
-          if (!window.NewNetworkFloat32) {
-            throw new Error(
-              "NewNetworkFloat32 function not available from WASM"
-            );
-          }
-
-          currentNetwork = window.NewNetworkFloat32(
-            JSON.stringify(layerSizes),
-            JSON.stringify(activations),
-            JSON.stringify(connected)
-          );
-
-          if (currentNetwork) {
-            log("✅ Network created successfully!");
-
-            // Build structure for visualization
-            const networkStructure = {
-              Layers: layerSizes.map((size, i) => ({
-                Width: size.Width,
-                Height: size.Height,
-                Neurons: [[{ Activation: activations[i] || "linear" }]],
-              })),
-            };
-
-            visualizeNetwork(networkStructure);
-
-            const growBtn = document.getElementById("growBtn");
-            if (growBtn) growBtn.disabled = false;
-
-            updateStatus(
-              "Network created! Now you can run the growth experiment.",
-              "success"
-            );
-            log("✅ Network is ready for growth experiments!");
-          } else {
-            throw new Error("Network creation returned null");
-          }
-        } catch (e) {
-          console.error("Network creation error:", e);
-          log(`❌ Error creating network: ${e.message}`);
-          updateStatus("Network creation failed!", "error");
-        }
-      };
-
-      window.runGrowth = async function () {
-        console.log("Run growth clicked");
-
-        if (!currentNetwork) {
-          log("❌ No network created yet! Please create a network first.");
-          updateStatus("Please create a network first!", "error");
-          return;
-        }
-
-        try {
-          log("\n🚀 Starting network growth experiment...");
-          log("This demonstrates distributed micro-network optimization!");
-          updateProgress(10);
-
-          const checkpointLayerEl = document.getElementById("checkpointLayer");
-          const numCandidatesEl = document.getElementById("numCandidates");
-          const epochsEl = document.getElementById("epochs");
-          const learningRateEl = document.getElementById("learningRate");
-          const inputsEl = document.getElementById("inputs");
-          const labelsEl = document.getElementById("labels");
-          const sizeConstraintsEl = document.getElementById("sizeConstraints");
-          const activationPoolEl = document.getElementById("activationPool");
-
-          if (
-            !checkpointLayerEl ||
-            !numCandidatesEl ||
-            !epochsEl ||
-            !learningRateEl ||
-            !inputsEl ||
-            !labelsEl ||
-            !sizeConstraintsEl ||
-            !activationPoolEl
-          ) {
-            throw new Error("Required input elements not found");
-          }
-
-          const checkpointLayer = parseInt(checkpointLayerEl.value);
-          const numCandidates = parseInt(numCandidatesEl.value);
-          const epochs = parseInt(epochsEl.value);
-          const learningRate = parseFloat(learningRateEl.value);
-          const tolerance = 1e-6;
-
-          const inputs = JSON.parse(inputsEl.value);
-          const labels = parseArray(labelsEl.value);
-
-          const [minSize, maxSize] = parseArray(sizeConstraintsEl.value);
-          const activationPool = parseArray(activationPoolEl.value);
-
-          log(`📊 Growth Parameters:`);
-          log(`  • Checkpoint Layer: ${checkpointLayer}`);
-          log(`  • Candidates: ${numCandidates}`);
-          log(`  • Epochs: ${epochs}`);
-          log(`  • Learning Rate: ${learningRate}`);
-          log(`  • Size Range: ${minSize}-${maxSize}`);
-          log(`  • Activation Pool: ${activationPool.join(", ")}`);
-          updateProgress(25);
-
-          // Get initial performance
-          log("\n📈 Evaluating initial network performance...");
-          const initialPredictions = [];
-          for (let i = 0; i < inputs.length; i++) {
-            currentNetwork.Forward(JSON.stringify(inputs[i]));
-            const output = JSON.parse(currentNetwork.GetOutput("[]"));
-            const prediction =
-              output.length > 0 ? output.indexOf(Math.max(...output)) : 0;
-            initialPredictions.push(prediction);
-          }
-
-          const initialScore = calculateAccuracy(initialPredictions, labels);
-          log(`📊 Initial accuracy: ${(initialScore * 100).toFixed(2)}%`);
-          updateProgress(50);
-
-          // Run growth algorithm
-          log("\n🌱 Running distributed growth algorithm...");
-          log("⚡ Extracting micro-networks and optimizing in parallel...");
-
-          if (!currentNetwork.Grow) {
-            throw new Error("Grow function not available on network object");
-          }
-
-          const improved = currentNetwork.Grow(
-            checkpointLayer,
-            JSON.stringify(inputs),
-            JSON.stringify(labels),
-            numCandidates,
-            epochs,
-            learningRate,
-            tolerance,
-            1.0,
-            -1.0,
-            minSize,
-            maxSize,
-            minSize,
-            maxSize,
-            JSON.stringify(activationPool),
-            4
-          );
-
-          updateProgress(90);
-
-          // Get final performance
-          log("\n📈 Evaluating final network performance...");
-          const finalPredictions = [];
-          for (let i = 0; i < inputs.length; i++) {
-            currentNetwork.Forward(JSON.stringify(inputs[i]));
-            const output = JSON.parse(currentNetwork.GetOutput("[]"));
-            const prediction =
-              output.length > 0 ? output.indexOf(Math.max(...output)) : 0;
-            finalPredictions.push(prediction);
-          }
-
-          const finalScore = calculateAccuracy(finalPredictions, labels);
-          const improvement = finalScore - initialScore;
-
-          log(`📊 Final accuracy: ${(finalScore * 100).toFixed(2)}%`);
+        } else {
+          log("\n⚡ No improvement found during growth experiment.");
           log(
-            `📈 Improvement: ${improvement >= 0 ? "+" : ""}${(
-              improvement * 100
-            ).toFixed(2)}%`
+            "💡 Try adjusting the parameters or running again with different settings."
           );
-
-          updateProgress(100);
-
-          if (improved) {
-            growthEvents++;
-            const statGrowth = document.getElementById("statGrowth");
-            if (statGrowth) statGrowth.textContent = growthEvents;
-            log("\n🎉 SUCCESS: Network was improved by growth!");
-            log("🔬 The micro-network surgery and reintegration worked!");
-            updateStatus(
-              "Growth experiment completed successfully!",
-              "success"
-            );
-          } else {
-            log("\n⚡ No improvement found during growth experiment.");
-            log(
-              "💡 Try adjusting the parameters or running again with different settings."
-            );
-            updateStatus(
-              "Growth completed - no improvement found. Try different parameters!",
-              "loading"
-            );
-          }
-
-          // Update score
-          const statScore = document.getElementById("statScore");
-          if (statScore)
-            statScore.textContent = (finalScore * 100).toFixed(1) + "%";
-
-          setTimeout(() => updateProgress(0), 2000);
-        } catch (e) {
-          console.error("Growth error:", e);
-          log(`❌ Error during growth: ${e.message}`);
-          updateStatus("Growth experiment failed!", "error");
-          updateProgress(0);
+          updateStatus(
+            "Growth completed - no improvement found. Try different parameters!",
+            "loading"
+          );
         }
-      };
 
-      window.clearOutput = function () {
-        console.log("Clear output clicked");
-        clearOutput();
-      };
+        // Update score
+        const statScore = document.getElementById("statScore");
+        if (statScore)
+          statScore.textContent = (finalScore * 100).toFixed(1) + "%";
 
-      window.downloadResults = function () {
-        console.log("Download results clicked");
-
-        const results = {
-          timestamp: new Date().toISOString(),
-          growthEvents: growthEvents,
-          benchmarkResults: benchmarkResults,
-          networkConfig: {
-            layers: document.getElementById("layerSizes")?.value || "",
-            activations: document.getElementById("activations")?.value || "",
-            connectivity: document.getElementById("connected")?.value || "",
-          },
-          statistics: {
-            totalLayers:
-              document.getElementById("statLayers")?.textContent || "-",
-            parameters:
-              document.getElementById("statParams")?.textContent || "-",
-            adhdScore: document.getElementById("statScore")?.textContent || "-",
-          },
-        };
-
-        const blob = new Blob([JSON.stringify(results, null, 2)], {
-          type: "application/json",
-        });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement("a");
-        a.href = url;
-        a.download = `paragon-demo-results-${
-          new Date().toISOString().split("T")[0]
-        }.json`;
-        document.body.appendChild(a);
-        a.click();
-        document.body.removeChild(a);
-        URL.revokeObjectURL(url);
-
-        updateStatus("Results downloaded successfully!", "success");
-        setTimeout(
-          () => updateStatus("Ready for more experiments!", "success"),
-          2000
-        );
-      };
-
-      function calculateAccuracy(predictions, labels) {
-        let correct = 0;
-        for (let i = 0; i < predictions.length; i++) {
-          if (predictions[i] === labels[i]) correct++;
-        }
-        return correct / labels.length;
+        setTimeout(() => updateProgress(0), 2000);
+      } catch (e) {
+        console.error("Growth error:", e);
+        log(`❌ Error during growth: ${e.message}`);
+        updateStatus("Growth experiment failed!", "error");
+        updateProgress(0);
       }
+    };
 
-      // Debug: Log when script is loaded
-      console.log("Paragon demo script loaded successfully");
-    </script>
+    window.clearOutput = function () {
+      console.log("Clear output clicked");
+      clearOutput();
+    };
+
+    window.downloadResults = function () {
+      console.log("Download results clicked");
+
+      const results = {
+        timestamp: new Date().toISOString(),
+        growthEvents: growthEvents,
+        benchmarkResults: benchmarkResults,
+        networkConfig: {
+          layers: document.getElementById("layerSizes")?.value || "",
+          activations: document.getElementById("activations")?.value || "",
+          connectivity: document.getElementById("connected")?.value || "",
+        },
+        statistics: {
+          totalLayers:
+            document.getElementById("statLayers")?.textContent || "-",
+          parameters:
+            document.getElementById("statParams")?.textContent || "-",
+          adhdScore: document.getElementById("statScore")?.textContent || "-",
+        },
+      };
+
+      const blob = new Blob([JSON.stringify(results, null, 2)], {
+        type: "application/json",
+      });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = `paragon-demo-results-${
+        new Date().toISOString().split("T")[0]
+      }.json`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+
+      updateStatus("Results downloaded successfully!", "success");
+      setTimeout(
+        () => updateStatus("Ready for more experiments!", "success"),
+        2000
+      );
+    };
+
+    function calculateAccuracy(predictions, labels) {
+      let correct = 0;
+      for (let i = 0; i < predictions.length; i++) {
+        if (predictions[i] === labels[i]) correct++;
+      }
+      return correct / labels.length;
+    }
+
+    // Debug: Log when script is loaded
+    console.log("Paragon demo script loaded successfully");
+  </script>
 
 {{ end }}
