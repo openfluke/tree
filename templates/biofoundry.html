@@ -1,0 +1,733 @@
+{{ define "biofoundry" }}
+
+<!-- BioFoundry Hero Section -->
+<section class="hero is-large biofoundry-hero">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-vcentered">
+        <div class="column is-6">
+          <div class="hero-content">
+            <h1
+              class="title is-1 has-text-white mb-4"
+              style="
+                font-size: 4.5rem;
+                font-weight: 900;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+              "
+            >
+              BioFoundry
+            </h1>
+            <h2
+              class="subtitle is-2 has-text-white-ter mb-5"
+              style="
+                font-weight: 400;
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+              "
+            >
+              Distributed AI Simulation Environment
+            </h2>
+            <p
+              class="is-size-4 has-text-white-bis mb-6"
+              style="line-height: 1.8; max-width: 600px"
+            >
+              Built on <strong class="has-text-info">Godot 4</strong>,
+              BioFoundry creates
+              <strong class="has-text-warning"
+                >27,000 procedural planets</strong
+              >
+              for AI agents to explore, evolve, and learn. Each world is a
+              unique sandbox where agents can
+              <strong class="has-text-success"
+                >dynamically build structures</strong
+              >
+              and develop complex behaviors through TCP-controlled interactions.
+            </p>
+            <div class="hero-stats columns is-mobile">
+              <div class="column is-narrow">
+                <div class="stat-item">
+                  <div class="stat-number has-text-warning">27K</div>
+                  <div class="stat-label has-text-white-ter">
+                    Procedural Worlds
+                  </div>
+                </div>
+              </div>
+              <div class="column is-narrow">
+                <div class="stat-item">
+                  <div class="stat-number has-text-info">3</div>
+                  <div class="stat-label has-text-white-ter">
+                    Complexity Tiers
+                  </div>
+                </div>
+              </div>
+              <div class="column is-narrow">
+                <div class="stat-item">
+                  <div class="stat-number has-text-success">∞</div>
+                  <div class="stat-label has-text-white-ter">Possibilities</div>
+                </div>
+              </div>
+            </div>
+            <div class="buttons mt-6">
+              <a
+                href="#download"
+                class="button is-large is-warning has-text-weight-bold"
+              >
+                <span class="icon"><i class="fas fa-download"></i></span>
+                <span>Download BioFoundry</span>
+              </a>
+              <a
+                href="https://github.com/OpenFluke/pixel"
+                target="_blank"
+                class="button is-large is-outlined has-text-white"
+              >
+                <span class="icon"><i class="fab fa-github"></i></span>
+                <span>View Example Project</span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="column is-6">
+          <div class="hero-visual">
+            <div class="simulation-preview">
+              <div class="floating-elements">
+                <div class="planet planet-1"></div>
+                <div class="planet planet-2"></div>
+                <div class="planet planet-3"></div>
+                <div class="connection-lines"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Title Screen Image Section -->
+<section class="section title-screen-section">
+  <div class="container">
+    <div class="has-text-centered">
+      <div class="title-screen-container">
+        <img
+          src="/static/images/biofoundry_FINAL.png"
+          alt="BioFoundry Title Screen"
+          class="title-screen-image"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Three Tier System Section -->
+<section class="section has-background-white-ter">
+  <div class="container">
+    <div class="has-text-centered mb-6">
+      <h2 class="title is-2 has-text-dark">Three-Tier Complexity System</h2>
+      <p class="subtitle is-4 has-text-grey-dark mb-6">
+        Progressive AI development from simple control to complex multi-agent
+        systems
+      </p>
+    </div>
+
+    <div class="columns is-multiline">
+      <div class="column is-4">
+        <div class="card tier-card tier-1">
+          <div class="card-content has-text-centered">
+            <div class="tier-icon mb-4">
+              <span class="icon is-large has-text-info">
+                <i class="fas fa-cube fa-3x"></i>
+              </span>
+            </div>
+            <p class="title is-3 has-text-info">Tier 1</p>
+            <p class="subtitle is-5 has-text-grey">Single Cube Control</p>
+            <div class="content">
+              <p>
+                Master the fundamentals with direct control of individual cubes.
+                Perfect for:
+              </p>
+              <ul class="has-text-left">
+                <li>Basic movement and physics</li>
+                <li>Simple reinforcement learning</li>
+                <li>Force and torque application</li>
+                <li>Foundation skill development</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-4">
+        <div class="card tier-card tier-2">
+          <div class="card-content has-text-centered">
+            <div class="tier-icon mb-4">
+              <span class="icon is-large has-text-success">
+                <i class="fas fa-cubes fa-3x"></i>
+              </span>
+            </div>
+            <p class="title is-3 has-text-success">Tier 2</p>
+            <p class="subtitle is-5 has-text-grey">
+              Dynamic Structure Building
+            </p>
+            <div class="content">
+              <p>Create and control complex multi-cube structures. Enables:</p>
+              <ul class="has-text-left">
+                <li>Joint-connected assemblies</li>
+                <li>Morphology evolution</li>
+                <li>Coordinated movement</li>
+                <li>Structural adaptation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-4">
+        <div class="card tier-card tier-3">
+          <div class="card-content has-text-centered">
+            <div class="tier-icon mb-4">
+              <span class="icon is-large has-text-warning">
+                <i class="fas fa-network-wired fa-3x"></i>
+              </span>
+            </div>
+            <p class="title is-3 has-text-warning">Tier 3</p>
+            <p class="subtitle is-5 has-text-grey">Multi-Agent Coordination</p>
+            <div class="content">
+              <p>Orchestrate multiple agents and structures simultaneously:</p>
+              <ul class="has-text-left">
+                <li>Swarm intelligence</li>
+                <li>Competitive evolution</li>
+                <li>Collaborative tasks</li>
+                <li>Ecosystem simulation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Video Showcase Section -->
+<section class="section has-background-dark">
+  <div class="container">
+    <div class="has-text-centered mb-6">
+      <h2 class="title is-2 has-text-white">See BioFoundry in Action</h2>
+      <p class="subtitle is-4 has-text-light mb-6">
+        Watch real-time procedural structure generation and AI agent behavior
+      </p>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="video-showcase">
+          <div class="video-container">
+            <iframe
+              width="100%"
+              height="450"
+              src="https://www.youtube.com/embed/ZFcuTFQinXQ"
+              title="Pixel Dog: Procedural Structure Spawn Test in OpenFluke BioFoundry"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            >
+            </iframe>
+          </div>
+          <div class="video-info mt-4 has-text-centered">
+            <h3 class="title is-4 has-text-white">
+              Pixel Dog: Procedural Structure Test
+            </h3>
+            <p class="has-text-light">
+              Demonstration of dynamic structure spawning and joint connection
+              systems in BioFoundry. This showcases Tier 2 capabilities where
+              agents can build and control complex multi-cube assemblies.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Technical Features Section -->
+<section class="section">
+  <div class="container">
+    <h2 class="title is-2 has-text-centered mb-6">Technical Capabilities</h2>
+
+    <div class="columns is-multiline">
+      <div class="column is-6">
+        <div class="feature-box">
+          <div class="feature-icon">
+            <span class="icon is-large has-text-primary">
+              <i class="fas fa-globe fa-2x"></i>
+            </span>
+          </div>
+          <div class="feature-content">
+            <h3 class="title is-4">Procedural Worlds</h3>
+            <p>
+              Each of the 27,000 planets is uniquely generated with varying
+              terrain, gravity, and environmental conditions. No two experiments
+              are identical.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-6">
+        <div class="feature-box">
+          <div class="feature-icon">
+            <span class="icon is-large has-text-success">
+              <i class="fas fa-plug fa-2x"></i>
+            </span>
+          </div>
+          <div class="feature-content">
+            <h3 class="title is-4">TCP Control Interface</h3>
+            <p>
+              Language-agnostic JSON-over-TCP protocol allows AI agents written
+              in any programming language to control the simulation in
+              real-time.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-6">
+        <div class="feature-box">
+          <div class="feature-icon">
+            <span class="icon is-large has-text-info">
+              <i class="fas fa-cogs fa-2x"></i>
+            </span>
+          </div>
+          <div class="feature-content">
+            <h3 class="title is-4">Dynamic Physics</h3>
+            <p>
+              Built on Godot 4's robust physics engine with optimizations for
+              handling hundreds of active objects while maintaining real-time
+              performance.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column is-6">
+        <div class="feature-box">
+          <div class="feature-icon">
+            <span class="icon is-large has-text-warning">
+              <i class="fas fa-docker fa-2x"></i>
+            </span>
+          </div>
+          <div class="feature-content">
+            <h3 class="title is-4">Container Ready</h3>
+            <p>
+              Deploy thousands of simulation instances using Docker/Podman.
+              Scale from single experiments to massive distributed evolutionary
+              runs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Download Section -->
+<section id="download" class="section has-background-primary">
+  <div class="container">
+    <div class="has-text-centered">
+      <h2 class="title is-2 has-text-white mb-6">Download BioFoundry</h2>
+      <p class="subtitle is-4 has-text-white-ter mb-6">
+        Get started with the latest release of BioFoundry simulation environment
+      </p>
+
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="box download-box">
+            <div class="columns is-vcentered">
+              <div class="column">
+                <h3 class="title is-4">Primordia v0.0.1</h3>
+                <p class="subtitle is-6 has-text-grey">
+                  Based on BioFoundry v1.7.1
+                </p>
+                <p>
+                  Complete simulation environment with example projects and
+                  documentation. Includes all three tiers of complexity and
+                  sample AI agents.
+                </p>
+              </div>
+              <div class="column is-narrow">
+                <div class="buttons">
+                  <a
+                    href="https://github.com/openfluke/primordia/releases/latest"
+                    target="_blank"
+                    class="button is-large is-success"
+                  >
+                    <span class="icon"><i class="fab fa-github"></i></span>
+                    <span>Download Release</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="notification is-info is-light mt-4">
+            <p>
+              <strong>Quick Start:</strong> Check out the
+              <a
+                href="https://github.com/OpenFluke/pixel"
+                target="_blank"
+                class="has-text-link"
+                ><strong>Pixel project</strong></a
+              >
+              for examples of structure building and agent control. This
+              demonstrates Tier 2 capabilities with procedural assembly
+              generation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Integration Section -->
+<section class="section has-background-white-bis">
+  <div class="container">
+    <div class="has-text-centered mb-6">
+      <h2 class="title is-2">Part of the OpenFluke Ecosystem</h2>
+      <p class="subtitle is-4 has-text-grey-dark">
+        BioFoundry integrates seamlessly with Paragon AI and TREE evolution
+        systems
+      </p>
+    </div>
+
+    <div class="columns is-vcentered">
+      <div class="column is-4 has-text-centered">
+        <div class="integration-card">
+          <span class="icon is-large has-text-success mb-3">
+            <i class="fas fa-brain fa-3x"></i>
+          </span>
+          <h3 class="title is-4 has-text-success">Paragon</h3>
+          <p>
+            Neural networks power the AI agents that navigate and build within
+            BioFoundry worlds.
+          </p>
+        </div>
+      </div>
+
+      <div class="column is-4 has-text-centered">
+        <div class="integration-card highlight">
+          <span class="icon is-large has-text-info mb-3">
+            <i class="fas fa-gamepad fa-3x"></i>
+          </span>
+          <h3 class="title is-4 has-text-info">BioFoundry</h3>
+          <p>
+            <strong>The simulation environment where evolution happens.</strong>
+            Provides the physics sandbox for AI experimentation.
+          </p>
+        </div>
+      </div>
+
+      <div class="column is-4 has-text-centered">
+        <div class="integration-card">
+          <span class="icon is-large has-text-warning mb-3">
+            <i class="fas fa-seedling fa-3x"></i>
+          </span>
+          <h3 class="title is-4 has-text-warning">TREE</h3>
+          <p>
+            Evolutionary algorithms optimize both agent behavior and morphology
+            across thousands of BioFoundry instances.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* BioFoundry Hero Styles - Updated to Black */
+  .biofoundry-hero {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #000000 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .biofoundry-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(
+        circle at 20% 80%,
+        rgba(255, 255, 255, 0.05) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 80% 20%,
+        rgba(255, 255, 255, 0.03) 0%,
+        transparent 50%
+      ),
+      radial-gradient(
+        circle at 40% 40%,
+        rgba(255, 255, 255, 0.02) 0%,
+        transparent 50%
+      );
+    animation: heroAnimation 15s ease-in-out infinite;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .stat-item {
+    text-align: center;
+    margin-right: 2rem;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+    font-weight: 900;
+    line-height: 1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  .stat-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* Title Screen Section */
+  .title-screen-section {
+    background: linear-gradient(to bottom, #000000, #1a1a1a);
+    padding: 3rem 0;
+  }
+
+  .title-screen-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  }
+
+  .title-screen-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px;
+  }
+
+  /* Simulation Preview Animation */
+  .hero-visual {
+    position: relative;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .simulation-preview {
+    position: relative;
+    width: 300px;
+    height: 300px;
+  }
+
+  .floating-elements {
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
+  .planet {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .planet-1 {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(45deg, #3cb371, #2e8b57);
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
+  }
+
+  .planet-2 {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, #20b2aa, #3cb371);
+    top: 60%;
+    right: 20%;
+    animation-delay: 2s;
+  }
+
+  .planet-3 {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(45deg, #2e8b57, #20b2aa);
+    bottom: 20%;
+    left: 40%;
+    animation-delay: 4s;
+  }
+
+  /* Tier Cards */
+  .tier-card {
+    height: 100%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  .tier-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  .tier-1:hover {
+    box-shadow: 0 12px 30px rgba(52, 152, 219, 0.3);
+  }
+
+  .tier-2:hover {
+    box-shadow: 0 12px 30px rgba(46, 204, 113, 0.3);
+  }
+
+  .tier-3:hover {
+    box-shadow: 0 12px 30px rgba(241, 196, 15, 0.3);
+  }
+
+  .tier-icon {
+    padding: 1rem;
+  }
+
+  /* Video Showcase */
+  .video-showcase {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+  }
+
+  .video-container {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Feature Boxes */
+  .feature-box {
+    display: flex;
+    align-items: flex-start;
+    padding: 2rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    transition: transform 0.3s ease;
+  }
+
+  .feature-box:hover {
+    transform: translateY(-5px);
+  }
+
+  .feature-icon {
+    margin-right: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .feature-content h3 {
+    margin-bottom: 0.5rem;
+  }
+
+  /* Download Box */
+  .download-box {
+    border-radius: 16px;
+    padding: 2rem;
+    background: white;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Integration Cards */
+  .integration-card {
+    padding: 2rem 1rem;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+  }
+
+  .integration-card:hover {
+    transform: scale(1.05);
+  }
+
+  .integration-card.highlight {
+    background: rgba(52, 152, 219, 0.1);
+    border: 2px solid rgba(52, 152, 219, 0.3);
+  }
+
+  /* Animations */
+  @keyframes heroAnimation {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px) scale(1);
+    }
+    33% {
+      transform: translateY(-20px) scale(1.1);
+    }
+    66% {
+      transform: translateY(10px) scale(0.95);
+    }
+  }
+
+  /* Responsive Design */
+  @media screen and (max-width: 768px) {
+    .biofoundry-hero .title {
+      font-size: 3rem !important;
+    }
+
+    .biofoundry-hero .subtitle {
+      font-size: 1.5rem !important;
+    }
+
+    .hero-visual {
+      height: 250px;
+    }
+
+    .simulation-preview {
+      width: 200px;
+      height: 200px;
+    }
+
+    .stat-item {
+      margin-right: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .feature-box {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .feature-icon {
+      margin-right: 0;
+      margin-bottom: 1rem;
+    }
+
+    .title-screen-container {
+      margin: 0 1rem;
+    }
+  }
+</style>
+
+{{ end }}

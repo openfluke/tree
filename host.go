@@ -92,6 +92,19 @@ func host() {
 		return c.Render("layout", data)
 	})
 
+	app.Get("/biofoundry", func(c *fiber.Ctx) error {
+		data := fiber.Map{
+			"Title": "biofoundry",
+			"User":  "Guest",
+		}
+		content, err := renderContent(engine, "biofoundry", data)
+		if err != nil {
+			return err
+		}
+		data["Content"] = template.HTML(content)
+		return c.Render("layout", data)
+	})
+
 	log.Printf("Starting Fiber server on port %s\n", port)
 	if err := app.Listen(":" + port); err != nil {
 		log.Fatalf("Failed to start server: %v", err)
